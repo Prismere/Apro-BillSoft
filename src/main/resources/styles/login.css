@@ -1,0 +1,24 @@
+.loginsplash{
+	-fx-background-color:#e0ece4;
+}
+
+.sectionleft{
+	-fx-background-color: #fff;
+}
+
+.sectionleft{
+	
+}
+.textfields{
+	-fx-background-color:#e0ece4;
+	-fx-font-size: 15px;
+}
+.buttonflat{
+ 	-fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #9bd1ad;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: #000;
+}

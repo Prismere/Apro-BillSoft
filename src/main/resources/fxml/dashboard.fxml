@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1069.0" maxWidth="1495.0" minHeight="720.0" minWidth="1280.0" prefHeight="1069.0" prefWidth="1495.0" styleClass="dashboard" stylesheets="@../styles/dashboard.css" xmlns="http://javafx.com/javafx/11.0.0" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="1069.0" prefWidth="1495.0">
+         <children>
+            <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="1087.0" prefWidth="245.0" style="-fx-background-color: #0c1a2d;" styleClass="sidebar">
+               <children>
+                  <Pane prefHeight="115.0" prefWidth="250.0" styleClass="logopane">
+                     <children>
+                        <Label layoutX="57.0" layoutY="28.0" prefHeight="66.0" prefWidth="137.0" styleClass="homelabel" text="APRO ERP" textAlignment="CENTER" textFill="#358dff">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="btndash" alignment="TOP_CENTER" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" stylesheets="@../styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnclient" alignment="TOP_CENTER" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Clients" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnvendor" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Vendors" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btninventory" alignment="TOP_LEFT" layoutX="10.0" layoutY="233.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Inventory" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnpurchase" alignment="TOP_LEFT" layoutX="10.0" layoutY="503.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Purchase" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnsale" alignment="TOP_LEFT" layoutX="10.0" layoutY="557.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Sales" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnreport" alignment="TOP_LEFT" layoutX="10.0" layoutY="395.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Reports" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btndash" alignment="TOP_LEFT" layoutX="10.0" layoutY="449.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Place1" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btndash" alignment="TOP_LEFT" layoutX="10.0" layoutY="503.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Place2" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btndash" alignment="TOP_LEFT" layoutX="10.0" layoutY="557.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Place3" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnsetting" alignment="TOP_LEFT" layoutX="10.0" layoutY="611.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-border-radius: 23px;" stylesheets="@../styles/dashboard.css" text="Settings" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

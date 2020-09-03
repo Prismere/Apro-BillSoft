@@ -1,0 +1,107 @@
+.sidebar
+{
+	-fx-background-color: #fafafa;
+}
+.sidebar_opt
+{
+	-fx-fill: #11b7da;
+}
+.anchorvbox
+{
+	-fx-background-color: #fafafa;
+}
+.invoicelabel
+{
+	-fx-background-color:#fff;
+	-fx-border-radius:9px 9px 9px 9px;
+	-fx-background-radius:9px 9px 9px 9px;
+	
+}
+.dropshadowlabel
+{
+	-fx-background-color:#fff;
+	-fx-border-radius:9px 9px 9px 9px;
+	-fx-background-radius:9px 9px 9px 9px;
+	
+}
+.sidebar_opt:hover
+{
+	  -fx-background-color:#0c1a2d;
+}
+
+/* Icon Designs */
+.ikonli-font-icon:hover
+{
+	  -fx-icon-color: #0c1a2d;
+}
+.ikonli-font-icon:selection
+{
+-fx-icon-color: #11b7da;
+}
+.ikonli-font-icon:focused
+{
+	-fx-icon-color: #000;
+}
+
+
+/* Button Designs */
+.frmclient
+{
+	-fx-background-color:#FF6347;
+}
+
+.frmclient:hover
+{
+	-fx-background-color:#db563e;
+}
+.frmclient:pressed
+{
+-fx-background-color:#a53f2d;
+}
+
+
+.frmcliesave{
+	-fx-background-color:#1E90FF;
+}
+.frmcliesave:hover {
+	-fx-background-color:#1a6fc2;
+}
+.frmcliesave:pressed {
+	-fx-background-color:#0f3d6a;
+	
+}
+
+
+.btnsave{
+	 -fx-background-color:#1E90FF;
+}
+.btnsave:hover {
+	-fx-background-color:#1a6fc2;
+}
+.btnsave:pressed {
+	-fx-background-color:#0f3d6a;
+}
+.btncancel
+{
+	-fx-background-color:#FF6347;
+}
+.btncancel:hover
+{
+	-fx-background-color:#db563e;
+}
+.btncancel:pressed
+{
+-fx-background-color:#a53f2d;
+}
+.btndelete
+{
+	-fx-background-color:#c70000;
+}
+.btndelete:hover
+{
+	-fx-background-color: #ab0000;
+}
+.btndelete:pressed
+{
+	-fx-background-color: #840101;
+}
