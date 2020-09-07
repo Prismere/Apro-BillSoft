@@ -1,0 +1,20 @@
+.blue{
+	-fx-background-color: #00BFFF;
+}
+.blue:pressed
+{
+	-fx-background-color:#ab0000;
+}
+.blue:hover
+{
+-fx-background-color:#29b2e0;
+}
+.red{
+	-fx-background-color:#FA8072;
+}
+.red:pressed{
+	-fx-background-color:#F08080;
+}
+.red:hover{
+	-fx-background-color:#F08080;
+}
