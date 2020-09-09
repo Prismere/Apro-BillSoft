@@ -9,7 +9,9 @@ import com.apro.login.SqliteConnection;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class Categorycontroller {
 	Connection conn;
@@ -43,17 +45,23 @@ public class Categorycontroller {
 	}
 	@FXML
 	TextField catname = new TextField();
+	@FXML
+	Label lblmsg = new Label();
 	public void catsave(ActionEvent event)  throws SQLException 
-	{
-		String query = "insert into category (catname) values (?);";
+	{ 
+		String query = "insert into tbcat (catname) values (?);";	
 		PreparedStatement prep= conn.prepareStatement(query);
+		String catn = catname.getText();
 		try
-		{
+		{ 	
 			prep.setString(1,catname.getText());
 			prep.executeUpdate();
+			lblmsg.setTextFill(Color.web("#008000"));
+			lblmsg.setText("Successfully added " + "'" + catn + "'");
 		}
 		catch(SQLException e)
 		{
+			lblmsg.setText("Category already exists in database");
 			System.out.println("Cannot be inserted");
 		}
 	}
