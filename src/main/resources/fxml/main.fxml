@@ -14,7 +14,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<VBox prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.homescreen.Maincontroller">
+<VBox fx:id="all" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.homescreen.Maincontroller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -308,6 +308,16 @@
                                                    </font>
                                                 </Hyperlink>
                                                 <Hyperlink prefHeight="23.0" prefWidth="135.0" text="Products">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink layoutX="10.0" layoutY="205.0" onAction="#newbrand" prefHeight="23.0" prefWidth="135.0" text="Brand">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink layoutX="10.0" layoutY="233.0" onAction="#newcategory" prefHeight="23.0" prefWidth="135.0" text="Category">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
