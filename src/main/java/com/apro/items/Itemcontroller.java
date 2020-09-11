@@ -73,16 +73,59 @@ public class Itemcontroller implements Initializable{
 	@FXML
 			ComboBox<String> cmbcat;
 	@FXML
+	ComboBox<String> cmbbrand;
+	@FXML
 	Label prolblmsg = new Label();
 	@FXML 
 Button btnprocan = new Button();
 	
 	PreparedStatement statement = null;
+	PreparedStatement statement1=null;
 	
 	 /**
 	     * Here we will define the method that builds the List used by the ComboBox
 	     */
-	    private List<String> getData() {
+	    
+	 private List<String> getbrand() {
+
+
+	        // Define the data you will be returning, in this case, a List of Strings for the ComboBox
+	        List<String> options = new ArrayList<>();
+	        
+	        try {
+	        	Class.forName("org.sqlite.JDBC");
+				Connection conn = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
+	            String query = "select brandname from brand order by brandname ASC";
+	            PreparedStatement statement = conn.prepareStatement(query);
+	            
+	            ResultSet set = statement.executeQuery();
+	            
+	           
+	            while (set.next()) {
+	                options.add(set.getString("brandname"));
+	               
+	            }
+	            
+	            statement.close();
+	            set.close();
+	          
+	            // Return the List
+	            return options;
+	            
+
+	        } catch (ClassNotFoundException | SQLException ex) {
+	            return null;
+	        }
+	       
+	    }
+	
+	
+	
+	
+	
+	
+	
+	private List<String> getData() {
 
 
 	        // Define the data you will be returning, in this case, a List of Strings for the ComboBox
@@ -96,6 +139,7 @@ Button btnprocan = new Button();
 	            
 	            ResultSet set = statement.executeQuery();
 	            
+	           
 	            while (set.next()) {
 	                options.add(set.getString("catname"));
 	               
@@ -121,6 +165,13 @@ Button btnprocan = new Button();
 		cmbcat.setItems(FXCollections.observableArrayList(getData()));
 		 cmbcat.setEditable(true);
          TextFields.bindAutoCompletion(cmbcat.getEditor(), cmbcat.getItems());
+         
+   
+         cmbbrand.setItems(FXCollections.observableArrayList(getbrand()));
+         cmbbrand.setEditable(true);
+         TextFields.bindAutoCompletion(cmbbrand.getEditor(), cmbbrand.getItems());
+         
+      
 	}
 	public void prosave(ActionEvent event)
 	{
