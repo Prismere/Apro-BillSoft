@@ -83,6 +83,25 @@ public class Maincontroller {
 		e.printStackTrace();
 	}
    }
-   
-	
+   public void btnbtn(ActionEvent event)
+   {
+
+	   try
+		{
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Invoices/invoicereport.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+		stage.setTitle("Inventory:: Version 1.0"); 
+		
+		/* make only foreground window active*/
+		stage.initModality(Modality.APPLICATION_MODAL);
+		
+		stage.initStyle(StageStyle.UNDECORATED);
+		stage.setScene(scene);
+		/* stage.setMaximized(true); */
+		stage.show();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+   }
 }

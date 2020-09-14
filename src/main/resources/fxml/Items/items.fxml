@@ -55,7 +55,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cmbcat" prefHeight="25.0" prefWidth="209.0">
+                        <ComboBox fx:id="cmbcat" onAction="#combcat" prefHeight="25.0" prefWidth="209.0">
                            <VBox.margin>
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </VBox.margin>

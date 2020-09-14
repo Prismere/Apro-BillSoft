@@ -9,9 +9,10 @@ import com.apro.login.SqliteConnection;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class Categorycontroller {
 	Connection conn;
@@ -25,6 +26,16 @@ public class Categorycontroller {
 		}
 	}
 
+	
+
+	/*
+	 * String qq = "Delete from item"; PreparedStatement qqq =
+	 * conn.prepareStatement("delete from item"); qqq.executeUpdate();
+	 */
+	
+	
+	
+	
 	public boolean isDbConnected() {
 		try {
 			return !conn.isClosed();
@@ -47,6 +58,8 @@ public class Categorycontroller {
 	TextField catname = new TextField();
 	@FXML
 	Label lblmsg = new Label();
+	@FXML 
+	Button btncan = new Button();
 	public void catsave(ActionEvent event)  throws SQLException 
 	{ 
 		String query = "insert into tbcat (catname) values (?);";	
@@ -66,5 +79,9 @@ public class Categorycontroller {
 		}
 	}
 	
-	
+	public void cancelcat(ActionEvent event)
+	{
+		Stage stg = (Stage) btncan.getScene().getWindow();
+		stg.close();
+	}
 }

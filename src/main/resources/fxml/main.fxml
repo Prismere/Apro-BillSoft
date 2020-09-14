@@ -190,7 +190,7 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button" AnchorPane.topAnchor="160.0">
+                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnbtn" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button" AnchorPane.topAnchor="160.0">
                                        <styleClass>
                                           <String fx:value="button" />
                                           <String fx:value="red" />
