@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="441.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.category.Categorycontroller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="441.0" styleClass="vboxshadow" stylesheets="@../../styles/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.category.Categorycontroller">
    <children>
       <Label text="New Category">
          <VBox.margin>
@@ -50,7 +50,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button layoutX="205.0" layoutY="31.0" mnemonicParsing="false" text="CANCEL">
+                  <Button fx:id="btncan" layoutX="205.0" layoutY="31.0" mnemonicParsing="false" onAction="#cancelcat" text="CANCEL">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -61,6 +61,6 @@
       </AnchorPane>
    </children>
    <effect>
-      <DropShadow blurType="GAUSSIAN" height="15.07" radius="7.035" width="15.07" />
+      <DropShadow blurType="GAUSSIAN" height="0.0" radius="0.0" spread="1.0" width="0.0" />
    </effect>
 </VBox>

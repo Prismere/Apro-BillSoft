@@ -55,7 +55,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cmbcat" prefHeight="25.0" prefWidth="209.0">
+                        <ComboBox fx:id="cmbcat" onAction="#combcat" prefHeight="25.0" prefWidth="209.0">
                            <VBox.margin>
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </VBox.margin>
@@ -355,12 +355,17 @@
                   </HBox>
                   <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="124.0" prefWidth="655.0">
                      <children>
-                        <Button fx:id="psave" mnemonicParsing="false" onAction="#invsave" prefHeight="51.0" prefWidth="97.0" text="SAVE (F2)">
+                        <Label fx:id="prolblmsg" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="417.0" textFill="RED">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="psave" mnemonicParsing="false" onAction="#prosave" prefHeight="51.0" prefWidth="97.0" text="SAVE (F2)">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="565.0" layoutY="10.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="97.0" text="CANCEL (F5)">
+                        <Button fx:id="btnprocan" layoutX="565.0" layoutY="10.0" mnemonicParsing="false" onAction="#procan" prefHeight="51.0" prefWidth="97.0" text="CANCEL (F5)">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>

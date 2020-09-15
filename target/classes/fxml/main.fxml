@@ -122,7 +122,7 @@
                <children>
                   <AnchorPane prefHeight="382.0" prefWidth="254.0">
                      <children>
-                        <Button alignment="CENTER" layoutX="2.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="243.0" stylesheets="@../styles/main.css" text="New Invoice">
+                        <Button alignment="CENTER" layoutX="2.0" mnemonicParsing="false" onAction="#newinvoice" prefHeight="75.0" prefWidth="243.0" stylesheets="@../styles/main.css" text="New Invoice">
                            <graphic>
                               <StackedFontIcon>
                                  <children>
@@ -190,7 +190,7 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button" AnchorPane.topAnchor="160.0">
+                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnbtn" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button" AnchorPane.topAnchor="160.0">
                                        <styleClass>
                                           <String fx:value="button" />
                                           <String fx:value="red" />
@@ -215,7 +215,7 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="btninv" alignment="CENTER" layoutX="115.0" layoutY="53.0" mnemonicParsing="false" onAction="#viewinv" prefHeight="50.0" prefWidth="122.0" stylesheets="@../styles/main.css" text="Add &#10;Inventory">
+                                    <Button fx:id="btninv" alignment="CENTER" layoutX="115.0" layoutY="53.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="122.0" stylesheets="@../styles/main.css" text="Add &#10;Inventory">
                                        <graphic>
                                           <StackedFontIcon>
                                              <children>
@@ -302,12 +302,22 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Hyperlink>
-                                                <Hyperlink prefHeight="23.0" prefWidth="135.0" text="Clients">
+                                                <Hyperlink onAction="#addclient" prefHeight="23.0" prefWidth="135.0" text="Clients">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Hyperlink>
-                                                <Hyperlink prefHeight="23.0" prefWidth="135.0" text="Products">
+                                                <Hyperlink layoutX="10.0" layoutY="205.0" onAction="#addbrand" prefHeight="23.0" prefWidth="135.0" text="Brand">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink layoutX="10.0" layoutY="205.0" onAction="#addcat" prefHeight="23.0" prefWidth="135.0" text="Category">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink onAction="#addprod" prefHeight="23.0" prefWidth="135.0" text="Products">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>

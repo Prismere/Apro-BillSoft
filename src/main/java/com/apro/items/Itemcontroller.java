@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -170,7 +171,9 @@ public class Itemcontroller implements Initializable {
 		try
 		{
 		String q = "insert into item (iname,catid,bid,sku,desc,hsn,cgst,sgst,igst,cess) values (?,?,?,?,?,?,?,?,?,?);";
+		String query2 = "insert into stock (itemid,purprice,saleprice,minprice,mrp,stock,stockvalue) values (?,?,?,?,?,?,?);";
 		PreparedStatement preps=conn.prepareStatement(q);
+		PreparedStatement stocks = conn.prepareStatement(query2);
 		preps.setString(1, pname.getText());
 		preps.setString(2, category);
 		preps.setString(3, brand);
@@ -182,10 +185,48 @@ public class Itemcontroller implements Initializable {
 		preps.setString(9, pigst.getText());
 		preps.setString(10, pcess.getText());
 		preps.executeUpdate();
+		
+		/*
+		 * ResultSet keys = preps.getGeneratedKeys(); keys.next(); int key =
+		 * keys.getInt(1); stocks.setInt(1, key); stocks.setDouble(2,
+		 * Double.parseDouble(pprice.getText())); stocks.setDouble(3,
+		 * Double.parseDouble(psale.getText())); stocks.setDouble(4,
+		 * Double.parseDouble(pmin.getText())); stocks.setDouble(5,
+		 * Double.parseDouble(pmrp.getText())); stocks.setInt(2,
+		 * Integer.parseInt(pstock.getText())); stocks.setDouble(7,
+		 * Double.parseDouble(pprice.getText()) * Double.parseDouble(pstock.getText()));
+		 * stocks.executeUpdate();
+		 */
+		
+		
+		/*
+		 * stocks.setInt(1, 1); stocks.setFloat(2, 39.3); stocks.setDouble(3,39.3);
+		 * stocks.setDouble(4, 39.3); stocks.setDouble(5, 39.3); stocks.setInt(2,39);
+		 * stocks.setDouble(7, 39.3 * 2);
+		 */
+			
+		
+		ResultSet keys = preps.getGeneratedKeys(); keys.next(); 
+		int key = keys.getInt(1);
+		stocks.setInt(1, key);
+		stocks.setString(2, "39.3");
+		stocks.setString(3, "39.3");
+		stocks.setString(4, "39.3");
+		stocks.setString(5, "39.3");
+		stocks.setString(6, "39.3");
+		int aa = 7 * 3;
+		stocks.setString(7, String.valueOf(aa));
+		
+		
+		
+		
+		stocks.executeUpdate();
+
+		
 		}
 		catch(SQLException ex)
 		{
-			prolblmsg.setText("Fill all values");
+			prolblmsg.setText(ex.getMessage());
 		}
 		
 		

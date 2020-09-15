@@ -18,3 +18,9 @@
 .red:hover{
 	-fx-background-color:#F08080;
 }
+
+.vboxshadow
+{
+	-fx-border-color:#000;
+	-fx-border-width: 3px;
+}
