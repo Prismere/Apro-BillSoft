@@ -122,7 +122,7 @@
                <children>
                   <AnchorPane prefHeight="382.0" prefWidth="254.0">
                      <children>
-                        <Button alignment="CENTER" layoutX="2.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="243.0" stylesheets="@../styles/main.css" text="New Invoice">
+                        <Button alignment="CENTER" layoutX="2.0" mnemonicParsing="false" onAction="#newinvoice" prefHeight="75.0" prefWidth="243.0" stylesheets="@../styles/main.css" text="New Invoice">
                            <graphic>
                               <StackedFontIcon>
                                  <children>
@@ -302,7 +302,7 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Hyperlink>
-                                                <Hyperlink prefHeight="23.0" prefWidth="135.0" text="Clients">
+                                                <Hyperlink onAction="#addclient" prefHeight="23.0" prefWidth="135.0" text="Clients">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
