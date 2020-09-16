@@ -190,7 +190,7 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnbtn" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button" AnchorPane.topAnchor="160.0">
+                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#addprod" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Add Products" AnchorPane.topAnchor="160.0">
                                        <styleClass>
                                           <String fx:value="button" />
                                           <String fx:value="red" />
@@ -247,7 +247,7 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="115.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button">
+                                    <Button alignment="CENTER" layoutX="115.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnbtn" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button">
                                        <styleClass>
                                           <String fx:value="button" />
                                           <String fx:value="red" />
@@ -317,7 +317,7 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Hyperlink>
-                                                <Hyperlink onAction="#addprod" prefHeight="23.0" prefWidth="135.0" text="Products">
+                                                <Hyperlink onAction="#itemreport" prefHeight="23.0" prefWidth="135.0" text="Products">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
