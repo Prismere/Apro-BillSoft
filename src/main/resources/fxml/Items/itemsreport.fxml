@@ -16,7 +16,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.items.Itemreportcontroller">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f2f2f2;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <effect>
@@ -107,22 +107,19 @@
                   <Separator prefHeight="0.0" prefWidth="1920.0" />
                </children>
             </HBox>
-            <TableView prefHeight="460.0" prefWidth="1336.0">
+            <TableView fx:id="itemtable" editable="true" prefHeight="460.0" prefWidth="1336.0" tableMenuButtonVisible="true">
               <columns>
-                <TableColumn prefWidth="43.0" text="No" />
-                <TableColumn prefWidth="149.0" text="Item Code" />
-                  <TableColumn prefWidth="190.0" text="Item Name" />
-                  <TableColumn minWidth="0.0" prefWidth="0.0" text="Description" />
-                  <TableColumn prefWidth="100.33334350585938" text="HSN" />
-                  <TableColumn prefWidth="111.0" text="Purchase Price" />
-                  <TableColumn prefWidth="107.0" text="Sale Price" />
-                  <TableColumn prefWidth="82.00003051757812" text="MRP" />
-                  <TableColumn prefWidth="95.3333740234375" text="Stock" />
-                  <TableColumn prefWidth="82.3333740234375" text="SGST" />
-                  <TableColumn prefWidth="148.0" text="CGST" />
-                  <TableColumn prefWidth="43.0" text="IGST" />
-                  <TableColumn prefWidth="74.0" text="CESS" />
-                  <TableColumn prefWidth="138.00006103515625" text="Action" />
+                <TableColumn fx:id="ino" prefWidth="43.0" text="No" />
+                <TableColumn fx:id="id" prefWidth="149.0" text="Item Code" />
+                  <TableColumn fx:id="iname" prefWidth="190.0" text="Item Name" />
+                  <TableColumn fx:id="desc" minWidth="0.0" prefWidth="0.0" text="Description" />
+                  <TableColumn fx:id="catid" minWidth="0.0" prefWidth="0.0" text="Category" />
+                  <TableColumn fx:id="hsn" prefWidth="100.33334350585938" text="HSN" />
+                  <TableColumn fx:id="sgst" prefWidth="82.3333740234375" text="SGST" />
+                  <TableColumn fx:id="cgst" prefWidth="148.0" text="CGST" />
+                  <TableColumn fx:id="igst" prefWidth="43.0" text="IGST" />
+                  <TableColumn fx:id="cess" prefWidth="74.0" text="CESS" />
+                  <TableColumn fx:id="action" prefWidth="138.00006103515625" text="Action" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -144,6 +141,34 @@
                         </HBox>
                      </children>
                   </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="153.0" prefHeight="44.0" prefWidth="1336.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="Search">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <StackedFontIcon>
+                           <children>
+                              <FontIcon iconLiteral="fa-search" />
+                           </children>
+                        </StackedFontIcon>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#delentry" prefHeight="31.0" prefWidth="95.0" text="Reset">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <StackedFontIcon>
+                           <children>
+                              <FontIcon iconLiteral="fa-refresh" />
+                           </children>
+                        </StackedFontIcon>
+                     </graphic>
+                  </Button>
                </children>
             </HBox>
          </children>
