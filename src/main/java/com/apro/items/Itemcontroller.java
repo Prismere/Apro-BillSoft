@@ -31,17 +31,32 @@ public class Itemcontroller implements Initializable {
 	Connection conn;
 
 	
-	  public Itemcontroller() { conn = SqliteConnection.Connector(); if (conn ==
-	  null) { System.out.println("Connection Not Successful");
+	  public Itemcontroller() {
+		  
+		  
+		  conn = SqliteConnection.Connector(); 
+		  if (conn ==
+	  null) { 
+			  System.out.println("Connection Not Successful");
 	  
-	 System.exit(1); } } public boolean isDbConnected() { try { return
-	  !conn.isClosed(); } catch (SQLException e) { e.printStackTrace(); return
-	  false; } }
+	 System.exit(1); 
+	 }
+		  } 
+	  public boolean isDbConnected()
+	  { try { 
+		  return
+	  !conn.isClosed(); 
+		  } catch (SQLException e) {
+			  e.printStackTrace(); 
+			  return
 	  
+					  false; } }
+	 
 	  public static Connection Connector() { try {
 	 Class.forName("org.sqlite.JDBC"); Connection conn1 =
 	  DriverManager.getConnection("jdbc:sqlite:testdb.sqlite"); return conn1; }
 	 catch (Exception e) { return null; } }
+	  
 	 
 	@FXML
 	TextField pname = new TextField();
@@ -84,7 +99,8 @@ public class Itemcontroller implements Initializable {
 
 	PreparedStatement statement = null;
 	PreparedStatement statement1 = null;
-
+	PreparedStatement preps = null;
+	PreparedStatement stocks=null;
 	/**
 	 * Here we will define the method that builds the List used by the ComboBox
 	 */
@@ -171,9 +187,9 @@ public class Itemcontroller implements Initializable {
 		try
 		{
 		String q = "insert into item (iname,catid,bid,sku,desc,hsn,cgst,sgst,igst,cess) values (?,?,?,?,?,?,?,?,?,?);";
-		String query2 = "insert into stock (itemid,purprice,saleprice,minprice,mrp,stock,stockvalue) values (?,?,?,?,?,?,?);";
-		PreparedStatement preps=conn.prepareStatement(q);
-		PreparedStatement stocks = conn.prepareStatement(query2);
+		String query2 = "insert into stock (itemid,purprice,saleprice,minprice,mrp,purstock,stockvalue,curstock) values (?,?,?,?,?,?,?,?);";
+		 preps=conn.prepareStatement(q);
+		 stocks = conn.prepareStatement(query2);
 		preps.setString(1, pname.getText());
 		preps.setString(2, category);
 		preps.setString(3, brand);
@@ -214,22 +230,28 @@ public class Itemcontroller implements Initializable {
 		stocks.setString(4, "39.3");
 		stocks.setString(5, "39.3");
 		stocks.setString(6, "39.3");
+		stocks.setString(7, "39");
 		int aa = 7 * 3;
 		stocks.setString(7, String.valueOf(aa));
 		
 		
-		
+	
 		
 		stocks.executeUpdate();
-
+	
 		
 		}
 		catch(SQLException ex)
 		{
 			prolblmsg.setText(ex.getMessage());
+			System.out.println(ex.getMessage());
 		}
 		
-		
+		finally
+		{
+			preps.close();
+			stocks.close();
+		}
 	}
 
 	/* close code */

@@ -1,5 +1,6 @@
 package com.apro.items;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,9 +16,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class Itemreportcontroller implements Initializable{
 	Connection conn;
@@ -65,7 +70,10 @@ public Itemreportcontroller(){
 		  public static Connection Connector() { try {
 		 Class.forName("org.sqlite.JDBC"); Connection conn1 =
 		  DriverManager.getConnection("jdbc:sqlite:testdb.sqlite"); return conn1; }
-		 catch (Exception e) { return null; } }
+		 catch (Exception e) { return null; } 
+		  
+		  
+		  }
 		
 		  
 		  ObservableList<Itemreportmodel> obist = FXCollections.observableArrayList();
@@ -79,13 +87,21 @@ public Itemreportcontroller(){
 			ResultSet rs = conn.createStatement().executeQuery("select * from item");
 			while(rs.next())
 			{
-				obist.add(new Itemreportmodel(rs.getString("id"),rs.getString("iname"),rs.getString("catid"),rs.getString("desc"), rs.getString("hsn"), rs.getString("sgst"), rs.getString("cgst"), rs.getString("igst"), rs.getString("cess")));
+				String quq = "select catname from tbcat where id="+ rs.getString("catid")+";";
+				PreparedStatement stm = conn.prepareStatement(quq);
+				ResultSet s = stm.executeQuery();
+				System.out.println(s.getString("catname"));
+				obist.add(new Itemreportmodel(rs.getString("id"),rs.getString("iname"),s.getString("catname"),rs.getString("desc"), rs.getString("hsn"), rs.getString("sgst"), rs.getString("cgst"), rs.getString("igst"), rs.getString("cess")));
+				
+				
 			}
 			}
 			catch (SQLException ex)
 			{
 				System.out.println("Error");
 			}
+			
+			
 			id.setCellValueFactory(new PropertyValueFactory<>("id"));
 			iname.setCellValueFactory(new PropertyValueFactory<>("iname"));
 			desc.setCellValueFactory(new PropertyValueFactory<>("desc"));
@@ -106,11 +122,29 @@ public Itemreportcontroller(){
 		  Itemreportmodel selitem = itemtable.getSelectionModel().getSelectedItem();
 		  itemtable.getItems().remove(selitem);
 		  
-		  String qu ="delete from item where id = " + selitem.id + ";";
-		  PreparedStatement pe = conn.prepareStatement(qu);
-		  pe.executeUpdate();
-		  System.out.println(qu);
+			/*
+			 * String qu ="delete from stock;"; PreparedStatement pe =
+			 * conn.prepareStatement(qu); pe.executeUpdate(); System.out.println(qu);
+			 */
+		   
+			  String qu ="delete from item where id = " + selitem.id + ";";
+			  PreparedStatement pe = conn.prepareStatement(qu); pe.executeUpdate();
+			 System.out.println(qu);
 		  
+	  }
+	  
+	  public void viewstock(ActionEvent ev) throws IOException
+	  {
+		  Itemreportmodel selitem = itemtable.getSelectionModel().getSelectedItem();
+		  System.out.println(selitem.id.toString());
+		  Stage stage=new Stage();
+		  FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Items/itemstock.fxml"));
+		  Parent root = (Parent)fxmlLoader.load();
+		  Itemstockcontroller its = fxmlLoader.<Itemstockcontroller>getController();
+		  its.setProduct(selitem.id.toString());
+		  Scene scene = new Scene(root);
+		  stage.setScene(scene);
+		  stage.show();
 	  }
 		  
 		 
