@@ -190,15 +190,6 @@
                                           <String fx:value="blue" />
                                        </styleClass>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#addprod" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Add Products" AnchorPane.topAnchor="160.0">
-                                       <styleClass>
-                                          <String fx:value="button" />
-                                          <String fx:value="red" />
-                                       </styleClass>
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                    </Button>
                                     <Button alignment="CENTER" layoutX="115.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Proforma&#10;Invoice">
                                        <graphic>
                                           <StackedFontIcon>
@@ -246,6 +237,15 @@
                                           <String fx:value="button" />
                                           <String fx:value="blue" />
                                        </styleClass>
+                                    </Button>
+                                    <Button alignment="CENTER" layoutX="-9.0" layoutY="160.0" mnemonicParsing="false" onAction="#addprod" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Add Products" AnchorPane.topAnchor="160.0">
+                                       <styleClass>
+                                          <String fx:value="button" />
+                                          <String fx:value="red" />
+                                       </styleClass>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
                                     </Button>
                                     <Button alignment="CENTER" layoutX="115.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnbtn" prefHeight="50.0" prefWidth="121.0" stylesheets="@../styles/main.css" text="Button">
                                        <styleClass>
@@ -331,7 +331,7 @@
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Hyperlink prefHeight="23.0" prefWidth="83.0" text="Vendors">
+                                                <Hyperlink onAction="#viewvendor" prefHeight="23.0" prefWidth="83.0" text="Vendors">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>

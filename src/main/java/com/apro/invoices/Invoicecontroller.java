@@ -17,9 +17,14 @@ import com.apro.login.SqliteConnection;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Invoicecontroller implements Initializable {
 	Connection conn;
@@ -81,6 +86,29 @@ public void invcancel(ActionEvent event)
 {
 	Stage stage = (Stage) btncan.getScene().getWindow();
 	stage.close();
+}
+
+
+
+public void saveinvoice(ActionEvent e)
+{
+	try
+	{
+	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Report/prodbill.fxml"));
+	Scene scene = new Scene(root);
+	Stage stage = new Stage();
+	stage.setTitle("Inventory:: Version 1.0"); 
+	
+	/* make only foreground window active*/
+	stage.initModality(Modality.APPLICATION_MODAL);
+	
+	stage.initStyle(StageStyle.UNDECORATED);
+	stage.setScene(scene);
+	/* stage.setMaximized(true); */
+	stage.show();
+} catch (Exception e2) {
+	e2.printStackTrace();
+}
 }
 
 @Override

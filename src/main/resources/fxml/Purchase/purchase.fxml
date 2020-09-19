@@ -37,7 +37,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="New Invoice">
+                  <Label text="New Purchase Order">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </GridPane.margin>
                      <children>
-                        <Label prefHeight="25.0" prefWidth="40.0" text="Client">
+                        <Label prefHeight="26.0" prefWidth="58.0" text="Vendor">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -80,7 +80,7 @@
                   <Separator prefWidth="200.0" GridPane.rowIndex="1" />
                   <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Invoice No.">
+                        <Label text="Purchase ID">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -94,7 +94,7 @@
                   </HBox>
                   <HBox layoutX="305.0" layoutY="66.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Order No.">
+                        <Label text="Order ID">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -432,7 +432,7 @@
                               </HBox>
                               <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="297.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#saveinvoice" prefHeight="50.0" prefWidth="103.0" text="SAVE (F2)">
+                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" text="SAVE (F2)">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>

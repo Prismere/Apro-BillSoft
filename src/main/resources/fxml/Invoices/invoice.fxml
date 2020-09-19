@@ -432,7 +432,7 @@
                               </HBox>
                               <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="297.0">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" text="SAVE (F2)">
+                                    <Button mnemonicParsing="false" onAction="#saveinvoice" prefHeight="50.0" prefWidth="103.0" text="SAVE (F2)">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>

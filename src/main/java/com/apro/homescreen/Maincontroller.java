@@ -168,5 +168,26 @@ public class Maincontroller {
 	   
    }
    
+   public void viewvendor(ActionEvent ev)
+   {
+	   try {
+		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/vendor.fxml"));
+		   Scene scene = new Scene(root);
+		   Stage stage = new Stage();
+		   stage.setTitle("Inventory:: Version 1.0");
+		   
+		   /* make only foreground active */
+		   stage.initModality(Modality.APPLICATION_MODAL);
+		   
+		   stage.initStyle(StageStyle.UNDECORATED);
+		   stage.setScene(scene);
+		   
+		   stage.show();
+	   }
+	   catch(Exception e) {
+		   e.printStackTrace();
+	   }
+   }
+   
    
 }
