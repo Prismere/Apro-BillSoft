@@ -34,7 +34,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -54,7 +54,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -75,7 +75,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -96,7 +96,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -116,7 +116,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -136,7 +136,7 @@ public class Maincontroller {
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
 		
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
 		stage.show();
@@ -157,7 +157,7 @@ public class Maincontroller {
 			/* make only foreground window active*/
 			stage.initModality(Modality.APPLICATION_MODAL);
 			
-			stage.initStyle(StageStyle.UNDECORATED);
+			stage.initStyle(StageStyle.UTILITY);
 			stage.setScene(scene);
 			/* stage.setMaximized(true); */
 			stage.show(); 
@@ -179,7 +179,7 @@ public class Maincontroller {
 		   /* make only foreground active */
 		   stage.initModality(Modality.APPLICATION_MODAL);
 		   
-		   stage.initStyle(StageStyle.UNDECORATED);
+		   stage.initStyle(StageStyle.UTILITY);
 		   stage.setScene(scene);
 		   
 		   stage.show();
@@ -189,5 +189,25 @@ public class Maincontroller {
 	   }
    }
    
+   public void purchase(ActionEvent eve)
+   {
+	   try {
+		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Purchase/purchase.fxml"));
+		   Scene scene = new Scene(root);
+		   Stage stage = new Stage();
+		   stage.setTitle("Inventory:: Version 1.0");
+		   
+		   /* make only foreground active */
+		   stage.initModality(Modality.APPLICATION_MODAL);
+		   
+		   stage.initStyle(StageStyle.UTILITY);
+		   stage.setScene(scene);
+		   
+		   stage.show();
+	   }
+	   catch(Exception e) {
+		   e.printStackTrace();
+	   }
+   }
    
 }

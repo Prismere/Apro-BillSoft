@@ -3,6 +3,7 @@ package com.apro.vendor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.apro.login.SqliteConnection;
@@ -84,6 +85,7 @@ public class Vendorcontroller {
 		String que = "insert into vendor (vname,vemail,vphone,vaddress,vtin,vgst,vpan,vcode,status) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(que);
 		String venname = vname.getText();
+		
 		String venemail = vemail.getText();
 		String venphone = vphone.getText();
 		String venpan = vpan.getText();
@@ -119,6 +121,17 @@ public class Vendorcontroller {
 	
 	public void vencancel (ActionEvent e)
 	{
+		
+	    try {
+			PreparedStatement delven = conn.prepareStatement("delete from vendor");
+			delven.executeUpdate();
+			delven.close();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	    
+	    
 		Stage stg = (Stage) btncan.getScene().getWindow();
 		stg.close();
 	}

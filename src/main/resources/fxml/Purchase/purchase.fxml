@@ -20,7 +20,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.invoices.Invoicecontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.purchase.PurchaseController">
    <children>
       <VBox layoutX="-1.0" prefHeight="853.0" prefWidth="903.0" style="-fx-background-color: f2f2f2;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
@@ -55,7 +55,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cmbclient" prefHeight="25.0" prefWidth="167.0">
+                        <ComboBox fx:id="cmbvendor" prefHeight="25.0" prefWidth="167.0">
                            <HBox.margin>
                               <Insets left="7.0" />
                            </HBox.margin>
@@ -85,7 +85,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="25.0" prefWidth="189.0">
+                        <TextField fx:id="purid" prefHeight="25.0" prefWidth="189.0">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -99,7 +99,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="25.0" prefWidth="189.0">
+                        <TextField fx:id="orderid" prefHeight="25.0" prefWidth="189.0">
                            <HBox.margin>
                               <Insets left="14.0" />
                            </HBox.margin>
@@ -142,7 +142,8 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="cmbpro" prefWidth="150.0" />
+                              <ComboBox fx:id="cmbpro" onAction="#selecteditem" prefWidth="150.0" />
+                              
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0">
@@ -152,7 +153,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="25.0" prefWidth="210.0" />
+                              <TextField fx:id="itemdesc" prefHeight="25.0" prefWidth="210.0" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -184,7 +185,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="25.0" prefWidth="73.0" />
+                              <TextField fx:id="qty" prefHeight="25.0" prefWidth="73.0" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -195,12 +196,12 @@
                         </VBox>
                         <VBox layoutX="458.0" layoutY="10.0">
                            <children>
-                              <Label prefHeight="17.0" prefWidth="59.0" text="Unit Priice">
+                              <Label prefHeight="17.0" prefWidth="59.0" text="Unit Price">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="25.0" prefWidth="76.0" />
+                              <TextField fx:id="up" prefHeight="25.0" prefWidth="76.0" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -216,7 +217,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="25.0" prefWidth="76.0" />
+                              <TextField fx:id="disc" prefHeight="25.0" prefWidth="76.0" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -232,7 +233,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="25.0" prefWidth="76.0" />
+                              <TextField fx:id="tax" prefHeight="25.0" prefWidth="76.0" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -243,7 +244,7 @@
                         </VBox>
                         <VBox alignment="CENTER" layoutX="819.0" layoutY="10.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" text="ADD">
+                              <Button fx:id="addprod" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" text="ADD">
                                  <effect>
                                     <DropShadow height="9.15" radius="4.0125" width="8.9" />
                                  </effect>
@@ -261,7 +262,7 @@
                   <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0" />
                   <VBox layoutX="14.0" layoutY="72.0" prefWidth="944.0">
                      <children>
-                        <TableView prefHeight="353.0" prefWidth="944.0">
+                        <TableView fx:id="tblprod" prefHeight="353.0" prefWidth="944.0">
                           <columns>
                             <TableColumn prefWidth="75.0" text="No" />
                             <TableColumn prefWidth="157.0" text="Product" />
@@ -437,7 +438,7 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>
                                     </Button>
-                                    <Button fx:id="btncan" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#invcancel" prefHeight="50.0" prefWidth="103.0" text="CANCEL (F7)">
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" text="CANCEL (F7)">
                                        <HBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </HBox.margin>

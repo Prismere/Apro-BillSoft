@@ -37,7 +37,7 @@
                               <HBox>
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="98.0" text="Vendor Name" />
-                                    <TextField fx:id="txtvname" prefHeight="26.0" prefWidth="282.0" />
+                                    <TextField fx:id="vname" prefHeight="26.0" prefWidth="282.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
