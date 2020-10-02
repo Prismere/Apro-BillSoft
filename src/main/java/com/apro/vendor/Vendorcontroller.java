@@ -1,91 +1,55 @@
 package com.apro.vendor;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.apro.comfun.Functions;
 import com.apro.login.SqliteConnection;
+import com.jfoenix.controls.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Vendorcontroller {
-	
 	Connection conn;
-
 	public Vendorcontroller() {
 		conn = SqliteConnection.Connector();
-		if (conn == null) {
-			System.out.println("Connection Not Successful");
-
-			System.exit(1);
 		}
-	}
-
-	
-
-	/*
-	 * String qq = "Delete from item"; PreparedStatement qqq =
-	 * conn.prepareStatement("delete from item"); qqq.executeUpdate();
-	 */
-	
-	
-	
-	
-	public boolean isDbConnected() {
-		try {
-			return !conn.isClosed();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	public static Connection Connector() {
-		try {
-			Class.forName("org.sqlite.JDBC");
-			Connection conn1 = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
-			return conn1;
-		} catch (Exception e) {
-			return null;
-		}
-	}
-	
-	
-	
-	
-	
 	@FXML
 	Button btncan = new Button();
 	@FXML
-	TextField vname = new TextField();
+	JFXTextField vname = new JFXTextField();
 	@FXML
-	TextField vemail = new TextField();
+	JFXTextField vemail = new JFXTextField();
 	@FXML
-	TextField vphone = new TextField();
+	JFXTextField vphone = new JFXTextField();
 	@FXML
-	TextField vpan = new TextField();
+	JFXTextField vpan = new JFXTextField();
 	@FXML
-	TextField vgst = new TextField();
+	JFXTextField vgst = new JFXTextField();
 	@FXML
-	TextField vtin = new TextField();
+	JFXTextField vtin = new JFXTextField();
 	@FXML
-	TextField vcode = new TextField();
+	JFXTextField vcode = new JFXTextField();
 	@FXML
-	TextArea vaddress = new TextArea();
-	@FXML
-	Label lblmsg = new Label();
-	
+	JFXTextArea vaddress = new JFXTextArea();
+
 	public void vensave(ActionEvent e) throws SQLException
 	{
 		String que = "insert into vendor (vname,vemail,vphone,vaddress,vtin,vgst,vpan,vcode,status) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(que);
 		String venname = vname.getText();
-		
 		String venemail = vemail.getText();
 		String venphone = vphone.getText();
 		String venpan = vpan.getText();
@@ -94,8 +58,6 @@ public class Vendorcontroller {
 		String vencode = vcode.getText();
 		String venaddress = vaddress.getText();
 		String venstatus = "1";
-		
-		
 		try {
 			stmt.setString(1, venname);
 			stmt.setString(2, venemail);
@@ -107,35 +69,35 @@ public class Vendorcontroller {
 			stmt.setString(8, vencode);
 			stmt.setString(9, venstatus);
 			stmt.executeUpdate();
-			lblmsg.setText(venname + "Inserted Successfully;");
-			
+			Functions.invsave(vname.getText() + " successfully inserted");
 		}
 		catch(SQLException e1)
 		{
-			lblmsg.setText("Error in Insertion");
-			e1.printStackTrace();
+			
+			Functions.invsave(e1.getMessage());
+		}
+		finally
+		{
+			stmt.close();
 		}
 	}
-	
-	
-	
 	public void vencancel (ActionEvent e)
-	{
-		
-	    try {
-			PreparedStatement delven = conn.prepareStatement("delete from vendor");
-			delven.executeUpdate();
-			delven.close();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-	    
-	    
+	{    
 		Stage stg = (Stage) btncan.getScene().getWindow();
 		stg.close();
 	}
-	
+	public void onview(ActionEvent e) throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/vendorsearch.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+		 stage.initModality(Modality.APPLICATION_MODAL);
+		 stage.setTitle("Apro Billing Software:: Version 1.0"); 
+		   stage.initStyle(StageStyle.UTILITY);
+		   stage.setScene(scene);
+		   stage.setResizable(false);
+		   stage.show();	
+	}
 	
 	
 }

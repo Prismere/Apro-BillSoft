@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1011.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.client.Clientsearchcontroller">
+   <children>
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="105.0" text="Client List">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Pane layoutX="8.0" layoutY="53.0" prefHeight="803.0" prefWidth="985.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css">
+         <children>
+            <HBox layoutX="301.0" layoutY="739.0" prefHeight="64.0" prefWidth="381.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#prodel" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #b12929;" styleClass="blue" stylesheets="@../../styles/main.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-trash" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#b12929" />
+                              <Stop color="#541c1c" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" styleClass="blue" stylesheets="@../../styles/main.css" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-search" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2ed334" />
+                              <Stop color="#527c52" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                     <HBox.margin>
+                        <Insets left="14.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btncan" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#oncan" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-times" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2dd333" />
+                              <Stop color="#f44336" offset="0.007662835249042145" />
+                              <Stop color="#a1332b" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <TableView fx:id="tblcli" layoutX="7.0" layoutY="18.0" prefHeight="716.0" prefWidth="969.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="54.0" text="ID" />
+                <TableColumn fx:id="name" prefWidth="203.0" text="Name" />
+                  <TableColumn fx:id="email" prefWidth="207.0" text="Email" />
+                  <TableColumn fx:id="phone" prefWidth="114.0" text="Phone" />
+                  <TableColumn fx:id="address" prefWidth="294.0" text="Address" />
+                  <TableColumn fx:id="status" prefWidth="95.0" text="Status" />
+              </columns>
+            </TableView>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="18.03" radius="8.515" width="18.03" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

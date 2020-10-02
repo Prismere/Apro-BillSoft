@@ -1,19 +1,28 @@
 package com.apro.client;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.apro.comfun.Functions;
 import com.apro.login.SqliteConnection;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class clientController {
 	
@@ -22,49 +31,23 @@ public class clientController {
 
 	public clientController() {
 		conn = SqliteConnection.Connector();
-		if (conn == null) {
-			System.out.println("Connection Not Successful");
-
-			System.exit(1);
-		}
-	}
-
-	public boolean isDbConnected() {
-		try {
-			return !conn.isClosed();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	public static Connection Connector() {
-		try {
-			Class.forName("org.sqlite.JDBC");
-			Connection conn1 = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
-			return conn1;
-		} catch (Exception e) {
-			return null;
-		}
 	}
 	
 	
 	
 	@FXML
-	TextField txtclient = new TextField();
+	JFXTextField txtclient = new JFXTextField();
 	@FXML
-	TextField txtcemail = new TextField();
+	JFXTextField txtcemail = new JFXTextField();
 	@FXML
-	TextField txtcphone = new TextField();
+	JFXTextField txtcphone = new JFXTextField();
 	@FXML
-	TextArea txtcaddress = new TextArea();
-	@FXML
-	Label lblmsg = new Label();
+	JFXTextArea txtcaddress = new JFXTextArea();
 	@FXML
 	Button btncancel = new Button();
 	
 	
-	public void saveclient(ActionEvent event) throws SQLException 
+	public void onsave(ActionEvent event) throws SQLException 
 	{
 		String query = "insert into client (name,address,email,phone,status) values (?,?,?,?,?);";
 		
@@ -78,18 +61,17 @@ public class clientController {
 			cst.setString(4, txtcphone.getText());
 			cst.setString(5, "1");
 			cst.executeUpdate();
-			
-			
-			/*
-			 * lblmsg.setTextFill(Color.web("#080000"));
-			 * lblmsg.setText("Successfully inserted " + txtclient.getText());
-			 */
+			Functions.invsave(txtclient.getText() + " inserted successfully");
+		
 			
 		}
 		catch(SQLException e){
-			lblmsg.setText("Client Already Exists");
+			Functions.invsave(e.getMessage());
 		}
-		
+		finally
+		{
+			cst.close();
+		}
 		
 	}
 	
@@ -99,6 +81,16 @@ public class clientController {
 		stg.close();
 	}
 	
-	
-	
+	public void onview(ActionEvent ev) throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/clientsearch.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+		 stage.initModality(Modality.APPLICATION_MODAL);
+		 stage.setTitle("Apro Billing Software:: Version 1.0"); 
+		   stage.initStyle(StageStyle.UTILITY);
+		   stage.setScene(scene);
+		   stage.setResizable(false);
+		   stage.show();
+	}
 }

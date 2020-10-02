@@ -1,5 +1,7 @@
 package com.apro.login;
 
+import com.jfoenix.controls.JFXNodesList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +14,7 @@ public class LoginLaunchApplication extends Application{
 	private double xOffset = 0;
 	 private double yOffset = 0;
 	public void start(Stage stage) throws Exception {
-       Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+       Parent root = FXMLLoader.load(getClass().getResource("/fxml/newdash.fxml"));
        root.setOnMousePressed((MouseEvent event) -> {
            xOffset = event.getSceneX();
            yOffset = event.getSceneY();
@@ -22,11 +24,12 @@ public class LoginLaunchApplication extends Application{
            stage.setY(event.getScreenY() - yOffset);
        });
        Scene scene = new Scene(root);
-       stage.setTitle("Inventory:: Version 1.0");
+       stage.setTitle("Apro Billing Software:: Version 1.0");
 		/* stage.getIcons().add(new Image("/images/logo.png")); */
-		 stage.initStyle(StageStyle.UNDECORATED);
+		 stage.initStyle(StageStyle.UTILITY);
        stage.setScene(scene);       
        stage.show();
+       
    }
 
 }

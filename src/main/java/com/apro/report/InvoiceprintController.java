@@ -12,6 +12,7 @@ import javafx.print.PageLayout;
 import javafx.print.PageOrientation;
 import javafx.print.Paper;
 import javafx.print.Printer;
+import javafx.print.PrinterAttributes;
 import javafx.print.PrinterJob;
 import javafx.print.PrinterJob.JobStatus;
 import javafx.scene.Node;
@@ -19,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.transform.Scale;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -33,6 +35,8 @@ public class InvoiceprintController extends Application{
     AnchorPane printview = new AnchorPane();
     @FXML
     VBox printbox = new VBox();
+    @FXML 
+    ScrollPane scroll = new ScrollPane(printview);
     
     @Override
     public void start(final Stage stage) throws IOException
@@ -123,16 +127,27 @@ public class InvoiceprintController extends Application{
     }   
     public void printinv(ActionEvent evnet)
     {
-    	Printer print= Printer.getDefaultPrinter();
-    	PageLayout page=print.createPageLayout(Paper.A4, PageOrientation.PORTRAIT, Printer.MarginType.HARDWARE_MINIMUM);
-    	PrinterJob jo= PrinterJob.createPrinterJob();
-    	if(jo!=null && jo.showPrintDialog(printview.getScene().getWindow()))
-    	{
-    		boolean suc=jo.printPage(page, printview);
-    		if(suc)
-    		{
-    			jo.endJob();
-    		}
-    	}
+    	
+    	
+    	Printer printer = Printer.getDefaultPrinter();
+        PageLayout pageLayout
+            = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT, Printer.MarginType.HARDWARE_MINIMUM);
+        PrinterAttributes attr = printer.getPrinterAttributes();
+        PrinterJob job = PrinterJob.createPrinterJob();
+        double scaleX
+            = pageLayout.getPrintableWidth() / printview.getBoundsInParent().getWidth();
+        double scaleY
+            = pageLayout.getPrintableHeight() / printview.getBoundsInParent().getHeight();
+        Scale scale = new Scale(scaleX, scaleY);
+        printview.getTransforms().add(scale);
+
+        if (job != null && job.showPrintDialog(printview.getScene().getWindow())) {
+          boolean success = job.printPage(pageLayout, printview);
+          if (success) {
+            job.endJob();
+
+          }
+        }
+        printview.getTransforms().remove(scale);
     }
 }

@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.swing.JComboBox.KeySelectionManager;
+
 import org.controlsfx.control.textfield.TextFields;
 
 import com.apro.login.SqliteConnection;
@@ -31,33 +33,9 @@ public class Itemcontroller implements Initializable {
 	Connection conn;
 
 	
-	  public Itemcontroller() {
-		  
-		  
+	  public Itemcontroller() {	  
 		  conn = SqliteConnection.Connector(); 
-		  if (conn ==
-	  null) { 
-			  System.out.println("Connection Not Successful");
-	  
-	 System.exit(1); 
-	 }
-		  } 
-	  public boolean isDbConnected()
-	  { try { 
-		  return
-	  !conn.isClosed(); 
-		  } catch (SQLException e) {
-			  e.printStackTrace(); 
-			  return
-	  
-					  false; } }
-	 
-	  public static Connection Connector() { try {
-	 Class.forName("org.sqlite.JDBC"); Connection conn1 =
-	  DriverManager.getConnection("jdbc:sqlite:testdb.sqlite"); return conn1; }
-	 catch (Exception e) { return null; } }
-	  
-	 
+		 } 
 	@FXML
 	TextField pname = new TextField();
 	@FXML
@@ -110,8 +88,7 @@ public class Itemcontroller implements Initializable {
 		// the ComboBox
 		List<String> options = new ArrayList<>();
 		try {
-			Class.forName("org.sqlite.JDBC");
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
+		
 			String query = "select brandname from brand order by brandname ASC";
 			PreparedStatement statement = conn.prepareStatement(query);
 
@@ -122,7 +99,7 @@ public class Itemcontroller implements Initializable {
 			statement.close();
 			set.close();
 			return options;
-		} catch (ClassNotFoundException | SQLException ex) {
+		} catch (SQLException ex) {
 			return null;
 		}
 	}
@@ -132,8 +109,6 @@ public class Itemcontroller implements Initializable {
 		// the ComboBox
 		List<String> options = new ArrayList<>();
 		try {
-			Class.forName("org.sqlite.JDBC");
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
 			String query = "select catname from tbcat order by catname ASC";
 			PreparedStatement statement = conn.prepareStatement(query);
 			ResultSet set = statement.executeQuery();
@@ -144,7 +119,7 @@ public class Itemcontroller implements Initializable {
 			set.close();
 			// Return the List
 			return options;
-		} catch (ClassNotFoundException | SQLException ex) {
+		} catch (SQLException ex) {
 			return null;
 		}
 	}
@@ -202,30 +177,12 @@ public class Itemcontroller implements Initializable {
 		preps.setString(10, pcess.getText());
 		preps.executeUpdate();
 		
-		/*
-		 * ResultSet keys = preps.getGeneratedKeys(); keys.next(); int key =
-		 * keys.getInt(1); stocks.setInt(1, key); stocks.setDouble(2,
-		 * Double.parseDouble(pprice.getText())); stocks.setDouble(3,
-		 * Double.parseDouble(psale.getText())); stocks.setDouble(4,
-		 * Double.parseDouble(pmin.getText())); stocks.setDouble(5,
-		 * Double.parseDouble(pmrp.getText())); stocks.setInt(2,
-		 * Integer.parseInt(pstock.getText())); stocks.setDouble(7,
-		 * Double.parseDouble(pprice.getText()) * Double.parseDouble(pstock.getText()));
-		 * stocks.executeUpdate();
-		 */
-		
-		
-		/*
-		 * stocks.setInt(1, 1); stocks.setFloat(2, 39.3); stocks.setDouble(3,39.3);
-		 * stocks.setDouble(4, 39.3); stocks.setDouble(5, 39.3); stocks.setInt(2,39);
-		 * stocks.setDouble(7, 39.3 * 2);
-		 */
-			
-		
-		ResultSet keys = preps.getGeneratedKeys(); keys.next(); 
+		ResultSet keys = preps.getGeneratedKeys(); 
+		keys.next(); 
 		int key = keys.getInt(1);
+		System.out.print(key);
 		stocks.setInt(1, key);
-		stocks.setString(2, "39.3");
+		stocks.setString(2, pprice.getText());
 		stocks.setString(3, "39.3");
 		stocks.setString(4, "39.3");
 		stocks.setString(5, "39.3");
@@ -251,6 +208,7 @@ public class Itemcontroller implements Initializable {
 		{
 			preps.close();
 			stocks.close();
+			
 		}
 	}
 

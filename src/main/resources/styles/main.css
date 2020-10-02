@@ -24,3 +24,24 @@
 	-fx-border-color:#000;
 	-fx-border-width: 3px;
 }
+
+.newdash
+{
+	
+	-fx-background-size: 1200 900;
+-fx-background-radius: 15;
+-fx-border-radius: 15;
+-fx-border-width:5;
+
+}
+
+.darktheme
+{
+		-fx-background-color:#Nncncn;
+}
+.anchorpane
+{
+	-fx-background-color: #e5e6ed;
+}
+
+

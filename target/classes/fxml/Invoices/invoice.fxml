@@ -60,7 +60,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </ComboBox>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="New">
+                        <Button mnemonicParsing="false" onAction="#onnew" prefHeight="25.0" prefWidth="63.0" text="New">
                            <HBox.margin>
                               <Insets left="7.0" />
                            </HBox.margin>

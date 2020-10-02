@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.client.clientController">
+   <children>
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="91.0" text="Set Theme">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+         <children>
+            <HBox layoutX="565.0" layoutY="543.0" prefHeight="52.0" prefWidth="270.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#onsave" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-save" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2ed334" />
+                              <Stop color="#527c52" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton fx:id="btncancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-times" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2dd333" />
+                              <Stop color="#f44336" offset="0.007662835249042145" />
+                              <Stop color="#a1332b" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXColorPicker layoutX="374.0" layoutY="292.0" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="18.03" radius="8.515" width="18.03" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

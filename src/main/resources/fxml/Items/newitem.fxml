@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.items.Newitemcontroller">
+   <children>
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="106.0" text="New Item">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="25.0" prefHeight="563.0" prefWidth="472.0">
+               <children>
+                  <JFXTextField fx:id="pname" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the product name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextArea fx:id="pdes" labelFloat="true" prefHeight="181.0" prefWidth="472.0" promptText="Enter the product desciption">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets top="65.0" />
+                     </padding>
+                  </JFXTextArea>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXComboBox fx:id="cmbbrand" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="212.0" promptText="Brand" visibleRowCount="15" />
+                        <JFXComboBox fx:id="cmbcat" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="238.0" promptText="Category" visibleRowCount="15">
+                           <HBox.margin>
+                              <Insets left="21.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="263.0" prefHeight="111.0" prefWidth="472.0">
+                     <children>
+                        <JFXTextField fx:id="pprice" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Purchase Price">
+                           <HBox.margin>
+                              <Insets top="35.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="psale" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="Sale Price">
+                           <HBox.margin>
+                              <Insets left="21.0" top="35.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="323.0" prefHeight="66.0" prefWidth="472.0">
+                     <children>
+                        <JFXTextField fx:id="pmin" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Min. Retail Price">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="pmrp" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="MRP">
+                           <HBox.margin>
+                              <Insets left="21.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="565.0" layoutY="23.0" prefHeight="437.0" prefWidth="206.0">
+               <children>
+                  <JFXTextField fx:id="psku" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="206.0" promptText="SKU">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="phsn" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="206.0" promptText="HSN">
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pcgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="82.0" prefHeight="25.0" prefWidth="206.0" promptText="CGST">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pigst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="119.0" prefHeight="25.0" prefWidth="206.0" promptText="IGST">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="psgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="261.0" prefHeight="25.0" prefWidth="206.0" promptText="SGST">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pcess" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="298.0" prefHeight="25.0" prefWidth="206.0" promptText="CESS">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <HBox layoutX="565.0" layoutY="543.0" prefHeight="52.0" prefWidth="270.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#onsave" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-save" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2ed334" />
+                              <Stop color="#527c52" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="fa-times" />
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#2dd333" />
+                              <Stop color="#f44336" offset="0.007662835249042145" />
+                              <Stop color="#a1332b" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="18.03" radius="8.515" width="18.03" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

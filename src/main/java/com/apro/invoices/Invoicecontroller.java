@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import org.controlsfx.control.textfield.TextFields;
 
+import com.apro.homescreen.Maincontroller;
 import com.apro.login.SqliteConnection;
 
 import javafx.collections.FXCollections;
@@ -30,17 +31,8 @@ public class Invoicecontroller implements Initializable {
 	Connection conn;
 	 public Invoicecontroller() {
 		 
-		 conn = SqliteConnection.Connector(); if (conn ==
-			  null) { System.out.println("Connection Not Successful");
-			  
-			 System.exit(1); } } public boolean isDbConnected() { try { return
-			  !conn.isClosed(); } catch (SQLException e) { e.printStackTrace(); return
-			  false; } }
-			  
-			  public static Connection Connector() { try {
-			 Class.forName("org.sqlite.JDBC"); Connection conn1 =
-			  DriverManager.getConnection("jdbc:sqlite:testdb.sqlite"); return conn1; }
-			 catch (Exception e) { return null; } }
+		 conn = SqliteConnection.Connector(); 
+		 }
 	
 	
 	
@@ -64,8 +56,6 @@ private List<String> getclient() {
 	// the ComboBox
 	List<String> options = new ArrayList<>();
 	try {
-		Class.forName("org.sqlite.JDBC");
-		Connection conn = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
 		String query = "select name from client order by name ASC";
 		PreparedStatement statement = conn.prepareStatement(query);
 
@@ -76,7 +66,7 @@ private List<String> getclient() {
 		statement.close();
 		set.close();
 		return options;
-	} catch (ClassNotFoundException | SQLException ex) {
+	} catch (SQLException ex) {
 		return null;
 	}
 }
@@ -88,13 +78,11 @@ public void invcancel(ActionEvent event)
 	stage.close();
 }
 
-
-
-public void saveinvoice(ActionEvent e)
+public void onnew(ActionEvent ex)
 {
 	try
 	{
-	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Report/prodbill.fxml"));
+	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/client.fxml"));
 	Scene scene = new Scene(root);
 	Stage stage = new Stage();
 	stage.setTitle("Inventory:: Version 1.0"); 
@@ -102,7 +90,32 @@ public void saveinvoice(ActionEvent e)
 	/* make only foreground window active*/
 	stage.initModality(Modality.APPLICATION_MODAL);
 	
-	stage.initStyle(StageStyle.UNDECORATED);
+	stage.initStyle(StageStyle.UTILITY);
+	stage.setScene(scene);
+	/* stage.setMaximized(true); */
+	stage.show();
+} catch (Exception exx) {
+	exx.printStackTrace();
+}
+}
+
+public void saveinvoice(ActionEvent e)
+{
+	try
+	{
+	
+	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Report/prodbill.fxml"));
+	Scene scene = new Scene(root);
+	Stage stage = new Stage();
+	stage.setTitle("Inventory:: Version 1.0"); 
+	
+	/* make only foreground window active*/
+	
+	stage.initModality(Modality.APPLICATION_MODAL);
+	
+	stage.initStyle(StageStyle.UTILITY);
+	
+	
 	stage.setScene(scene);
 	/* stage.setMaximized(true); */
 	stage.show();

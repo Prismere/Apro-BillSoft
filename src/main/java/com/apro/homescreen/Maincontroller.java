@@ -21,6 +21,7 @@ import com.apro.login.SqliteConnection;
 public class Maincontroller {
 	@FXML	
 	AnchorPane newitem = new AnchorPane();
+
 	@FXML
 	public void addprod()
 	{
@@ -29,14 +30,15 @@ public class Maincontroller {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/items.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
-		
+	
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -46,10 +48,10 @@ public class Maincontroller {
    {
 	   try
 		{
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/brand.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/newbrand.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -57,6 +59,7 @@ public class Maincontroller {
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -67,10 +70,10 @@ public class Maincontroller {
    {
 	   try
 		{
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/category.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/newcategory.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -78,6 +81,7 @@ public class Maincontroller {
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -91,7 +95,7 @@ public class Maincontroller {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Invoices/invoicereport.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -99,6 +103,7 @@ public class Maincontroller {
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -111,7 +116,7 @@ public class Maincontroller {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Invoices/invoice.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -119,6 +124,7 @@ public class Maincontroller {
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -128,10 +134,10 @@ public class Maincontroller {
    {
 	   try
 		{
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/client.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/newclient.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.setTitle("Inventory:: Version 1.0"); 
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		
 		/* make only foreground window active*/
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -139,6 +145,7 @@ public class Maincontroller {
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setScene(scene);
 		/* stage.setMaximized(true); */
+		stage.setResizable(false);
 		stage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -149,10 +156,10 @@ public class Maincontroller {
    {
 	   
 	   try {
-		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/itemsreport.fxml"));
+		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/newitemsreport.fxml"));
 		   Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			stage.setTitle("Inventory:: Version 1.0"); 
+			stage.setTitle("Apro Billing Software:: Version 1.0"); 
 			
 			/* make only foreground window active*/
 			stage.initModality(Modality.APPLICATION_MODAL);
@@ -160,6 +167,7 @@ public class Maincontroller {
 			stage.initStyle(StageStyle.UTILITY);
 			stage.setScene(scene);
 			/* stage.setMaximized(true); */
+			stage.setResizable(false);
 			stage.show(); 
 	   }
 	   catch(Exception e) {
@@ -171,16 +179,17 @@ public class Maincontroller {
    public void viewvendor(ActionEvent ev)
    {
 	   try {
-		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/vendor.fxml"));
+		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/newvendor.fxml"));
 		   Scene scene = new Scene(root);
 		   Stage stage = new Stage();
-		   stage.setTitle("Inventory:: Version 1.0");
+		   stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		   
 		   /* make only foreground active */
 		   stage.initModality(Modality.APPLICATION_MODAL);
-		   
+		   stage.isResizable();
 		   stage.initStyle(StageStyle.UTILITY);
 		   stage.setScene(scene);
+		   stage.setResizable(false);
 		   
 		   stage.show();
 	   }
@@ -195,14 +204,14 @@ public class Maincontroller {
 		   Parent root = FXMLLoader.load(getClass().getResource("/fxml/Purchase/purchase.fxml"));
 		   Scene scene = new Scene(root);
 		   Stage stage = new Stage();
-		   stage.setTitle("Inventory:: Version 1.0");
+		   stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		   
 		   /* make only foreground active */
 		   stage.initModality(Modality.APPLICATION_MODAL);
 		   
 		   stage.initStyle(StageStyle.UTILITY);
 		   stage.setScene(scene);
-		   
+		   stage.setResizable(false);
 		   stage.show();
 	   }
 	   catch(Exception e) {
@@ -211,3 +220,7 @@ public class Maincontroller {
    }
    
 }
+
+
+
+

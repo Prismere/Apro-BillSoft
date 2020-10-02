@@ -23,8 +23,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+
 public class Invoicereportcontroller implements Initializable
 {
+	Connection conn;
+	public Invoicereportcontroller() {
+		conn = SqliteConnection.Connector();
+	}
+	
+	
+	
+	
 	@FXML
 	TableView<Invoicemodel> tableview;
 	@FXML
@@ -32,35 +41,9 @@ public class Invoicereportcontroller implements Initializable
 	@FXML
 	TableColumn<Invoicemodel, String> catname;
 	
-	Connection conn;
+	
 
-	public Invoicereportcontroller() {
-		conn = SqliteConnection.Connector();
-		if (conn == null) {
-			System.out.println("Connection Not Successful");
-
-			System.exit(1);
-		}
-	}
-
-	public boolean isDbConnected() {
-		try {
-			return !conn.isClosed();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	public static Connection Connector() {
-		try {
-			Class.forName("org.sqlite.JDBC");
-			Connection conn1 = DriverManager.getConnection("jdbc:sqlite:testdb.sqlite");
-			return conn1;
-		} catch (Exception e) {
-			return null;
-		}
-	}
+	
 	ObservableList<Invoicemodel> obist = FXCollections.observableArrayList();
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -77,6 +60,7 @@ public class Invoicereportcontroller implements Initializable
 		{
 			System.out.println("Error");
 		}
+		
 		id.setCellValueFactory(new PropertyValueFactory<>("id"));
 		catname.setCellValueFactory(new PropertyValueFactory<>("catname"));
 		tableview.setItems(obist);
