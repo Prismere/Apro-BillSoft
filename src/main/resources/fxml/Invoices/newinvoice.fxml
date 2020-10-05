@@ -19,9 +19,9 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="953.0" prefWidth="996.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.purchase.PurchaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="953.0" prefWidth="996.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.invoices.Invoicecontroller">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="158.0" text="New Purchase Order">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="158.0" text="New Invoice">
          <font>
             <Font size="17.0" />
          </font>
@@ -86,7 +86,7 @@
                <children>
                   <HBox prefHeight="117.0" prefWidth="936.0">
                      <children>
-                        <JFXComboBox fx:id="cmbvendor" labelFloat="true" prefHeight="37.0" prefWidth="113.0" promptText="Vendor" />
+                        <JFXComboBox fx:id="cmbclient" labelFloat="true" prefHeight="37.0" prefWidth="113.0" promptText="Clients" />
                         <JFXButton buttonType="RAISED" onAction="#onnew" prefHeight="42.0" prefWidth="103.0" style="-fx-background-color: #008CBA;" text="Add New" textFill="WHITE">
                            <graphic>
                               <FontIcon iconColor="WHITE" iconLiteral="fa-plus" />
@@ -103,14 +103,14 @@
                               </RadialGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Purchase ID">
+                        <Label fx:id="lblinvno" prefHeight="43.0" prefWidth="117.0" text="Label">
                            <HBox.margin>
-                              <Insets left="32.0" />
+                              <Insets left="35.0" />
                            </HBox.margin>
                            <font>
                               <Font size="16.0" />
                            </font>
-                        </JFXTextField>
+                        </Label>
                         <JFXComboBox fx:id="cmbpro" labelFloat="true" onAction="#selecteditem" prefHeight="38.0" prefWidth="157.0" promptText="Product">
                            <HBox.margin>
                               <Insets left="39.0" />
@@ -363,7 +363,7 @@
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="4400.50">
+                        <Label fx:id="txttot" layoutX="10.0" layoutY="10.0" text="4400.50">
                            <HBox.margin>
                               <Insets left="55.0" />
                            </HBox.margin>

@@ -18,7 +18,7 @@ public class Functions {
 	Stage primaryStage = new Stage();
 	 JFXDialogLayout content= new JFXDialogLayout();
 	    content.setHeading(new Text(msg));
-	    content.setBody(new Text("Operation Successfull"));
+	    content.setBody(new Text("Operation Successful"));
 	    StackPane stackpane = new StackPane();
 	    JFXDialog dialog =new JFXDialog(stackpane, content, JFXDialog.DialogTransition.CENTER);
 	    JFXButton button=new JFXButton("Okay");

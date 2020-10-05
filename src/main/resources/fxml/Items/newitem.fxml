@@ -171,7 +171,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
+                  <JFXButton fx:id="btncancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#oncan" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

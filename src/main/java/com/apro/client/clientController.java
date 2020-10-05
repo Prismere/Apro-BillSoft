@@ -43,8 +43,7 @@ public class clientController {
 	JFXTextField txtcphone = new JFXTextField();
 	@FXML
 	JFXTextArea txtcaddress = new JFXTextArea();
-	@FXML
-	Button btncancel = new Button();
+
 	
 	
 	public void onsave(ActionEvent event) throws SQLException 
@@ -92,5 +91,12 @@ public class clientController {
 		   stage.setScene(scene);
 		   stage.setResizable(false);
 		   stage.show();
+	}
+	@FXML
+	Button btncancel = new Button();
+	public void oncan(ActionEvent event)
+	{
+		Stage stage = (Stage) btncancel.getScene().getWindow();
+		stage.close();
 	}
 }

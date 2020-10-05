@@ -180,4 +180,11 @@ PreparedStatement stocks=null;
 		cmbbrand.setEditable(true);
 		TextFields.bindAutoCompletion(cmbbrand.getEditor(), cmbbrand.getItems());
 	}
+	@FXML
+	JFXButton btncancel = new JFXButton();
+	public void oncan(ActionEvent event)
+	{
+		Stage stage = (Stage) btncancel.getScene().getWindow();
+		stage.close();
+	}
 }

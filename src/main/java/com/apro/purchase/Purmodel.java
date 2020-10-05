@@ -16,3 +16,4 @@ public Purmodel(String name) {
 	this.name = name;
 }
 }
+	

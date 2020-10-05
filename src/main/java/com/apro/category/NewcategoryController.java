@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import com.apro.comfun.Functions;
 import com.apro.login.SqliteConnection;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -64,5 +65,11 @@ JFXTextField catname = new JFXTextField();
 		   stage.setResizable(false);
 		   stage.show();	
 	}
-	
+	@FXML
+	JFXButton btncancel = new JFXButton();
+	public void oncan(ActionEvent event)
+	{
+		Stage stage = (Stage) btncancel.getScene().getWindow();
+		stage.close();
+	}
 }

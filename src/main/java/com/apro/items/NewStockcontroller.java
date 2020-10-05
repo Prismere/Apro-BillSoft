@@ -125,8 +125,14 @@ public class NewStockcontroller implements Initializable{
 		    primaryStage.setResizable(false);
 		    primaryStage.show();
 		    
-		    
-		    
 		
 	}
+	@FXML
+	JFXButton btncancel = new JFXButton();
+	public void oncan(ActionEvent event)
+	{
+		Stage stage = (Stage) btncancel.getScene().getWindow();
+		stage.close();
+	}
+	
 }

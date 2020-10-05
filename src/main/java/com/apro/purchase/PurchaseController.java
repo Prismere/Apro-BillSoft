@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -58,6 +59,7 @@ public class PurchaseController implements Initializable{
 	JFXComboBox<String> cmbpay = new JFXComboBox<String>();
 	@FXML
 	TableView<Purmodel> tblpro;
+
 	@FXML
 	TableColumn<Purmodel, String> name;
 	Connection conn;
@@ -75,18 +77,16 @@ public class PurchaseController implements Initializable{
 				cmbvendor.setEditable(true);
 				TextFields.bindAutoCompletion(cmbvendor.getEditor(), cmbvendor.getItems());
 				
-				try {
-					cmbpro.setItems(FXCollections.observableArrayList(getProduct()));
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			
+				cmbpro.setItems(FXCollections.observableArrayList(getProduct()));
 				cmbpro.setEditable(true);
 				TextFields.bindAutoCompletion(cmbpro.getEditor(), cmbpro.getItems());
 				
 				String timeStamp = new SimpleDateFormat("dd" + "/" + "MM" + "/" +"yyyy").format(Calendar.getInstance().getTime());
 				dtpick.setText(timeStamp);
 				cmbpay.getItems().addAll("Credit Card","Debit Card","UPI","Cash","Pay Later");
+				
+				
 			}
 
 			
@@ -111,13 +111,13 @@ private List<String> getvendor(){
 		
 	}
 	catch(SQLException ex) {
-		System.out.println(ex.getMessage());
+		Functions.invsave(ex.getMessage());
 		return null;
 	}
 	
 }
 
-private List<String> getProduct() throws SQLException{
+private List<String> getProduct(){
 	
 	List<String> items = new ArrayList<>();
 	ResultSet set = null;
@@ -144,17 +144,17 @@ private List<String> getProduct() throws SQLException{
 	
 public void selecteditem(ActionEvent ev) throws SQLException
 {
-	System.out.println(cmbpro.getValue());
+	
 	ResultSet items = null;
 	PreparedStatement fetchproduct = null;
 	String query = "select * from item where iname = '"+ cmbpro.getValue().toString() +"';";
 	try {
 		fetchproduct = conn.prepareStatement(query);
 	    items = fetchproduct.executeQuery();
-	    System.out.println(items.getString("desc"));
+	    
 	    itemdesc.setText(items.getString("desc"));
 	    qty.setText("1");
-	    System.out.println(items.getString("id"));
+	    
 	    qty.requestFocus();
 	} 
 	

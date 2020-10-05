@@ -48,7 +48,7 @@
                   <JFXNodesList>
                      <children>
                         <FontIcon iconLiteral="fa-cog" iconSize="39" translateX="139.0" />
-                        <JFXButton onAction="#ondefault" prefHeight="54.0" prefWidth="152.0" style="-fx-alignment: left;" styleClass="newdash" text="Default Theme" translateX="92.0" translateY="15.0">
+                        <JFXButton onAction="#ondefault" prefHeight="54.0" prefWidth="152.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Default Theme" translateX="92.0" translateY="15.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-pie-chart" />
                            </graphic>
@@ -64,7 +64,7 @@
                               </LinearGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXButton layoutX="-21.0" layoutY="49.0" onAction="#ondarktheme" prefHeight="54.0" prefWidth="156.0" style="-fx-alignment: left;" styleClass="newdash" text="Dark Theme" translateX="95.0">
+                        <JFXButton layoutX="-21.0" layoutY="49.0" onAction="#ondarktheme" prefHeight="54.0" prefWidth="156.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Dark Theme" translateX="95.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-pie-chart" />
                            </graphic>
@@ -86,7 +86,7 @@
             </HBox>
             <VBox layoutX="13.0" layoutY="64.0" prefHeight="732.0" prefWidth="196.0">
                <children>
-                  <JFXButton alignment="CENTER" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: #6f3dd8;" styleClass="newdash" text="New Invoice" textFill="WHITE">
+                  <JFXButton alignment="CENTER" onAction="#oninv" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: #6f3dd8;" styleClass="newdash" text="New Invoice" textFill="WHITE">
                      <graphic>
                         <StackedFontIcon>
                            <children>
@@ -109,7 +109,7 @@
                   </JFXButton>
                   <JFXNodesList fx:id="invnode">
                      <children>
-                        <JFXButton prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right;" text="Inventory">
+                        <JFXButton prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Inventory">
                            <graphic>
                               <FontIcon iconLiteral="fa-plus" />
                            </graphic>
@@ -126,7 +126,7 @@
                               </RadialGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXButton layoutX="10.0" layoutY="10.0" onAction="#newitem" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Add Inventory" translateX="203.0" translateY="-25.0">
+                        <JFXButton layoutX="10.0" layoutY="10.0" onAction="#newitem" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Add Inventory" translateX="203.0" translateY="-25.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-plus" />
                            </graphic>
@@ -143,7 +143,7 @@
                               </RadialGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXButton layoutX="10.0" layoutY="71.0" onAction="#onsearch" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Search Inventory" translateX="203.0" translateY="-15.0">
+                        <JFXButton layoutX="10.0" layoutY="71.0" onAction="#onsearch" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Search Inventory" translateX="203.0" translateY="-15.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-plus" />
                            </graphic>
@@ -165,7 +165,7 @@
                         <Insets top="13.0" />
                      </VBox.margin>
                   </JFXNodesList>
-                  <JFXButton layoutX="10.0" layoutY="79.0" onAction="#clientview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Clients">
+                  <JFXButton layoutX="10.0" layoutY="79.0" onAction="#clientview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Clients">
                      <graphic>
                         <FontIcon iconLiteral="fa-user" />
                      </graphic>
@@ -185,7 +185,7 @@
                         <Insets />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="140.0" onAction="#vendorview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Vendors">
+                  <JFXButton layoutX="10.0" layoutY="140.0" onAction="#vendorview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Vendors">
                      <graphic>
                         <FontIcon iconLiteral="fa-user-md" />
                      </graphic>
@@ -202,7 +202,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="201.0" onAction="#brandview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Brand">
+                  <JFXButton layoutX="10.0" layoutY="201.0" onAction="#brandview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Brand">
                      <graphic>
                         <FontIcon iconLiteral="fa-plus" />
                      </graphic>
@@ -219,7 +219,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="262.0" onAction="#catview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Category">
+                  <JFXButton layoutX="10.0" layoutY="262.0" onAction="#catview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Category">
                      <graphic>
                         <FontIcon iconLiteral="fa-plus" />
                      </graphic>
@@ -236,7 +236,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="323.0" onAction="#purview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Purchase">
+                  <JFXButton layoutX="10.0" layoutY="323.0" onAction="#purview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Purchase">
                      <graphic>
                         <FontIcon iconLiteral="fa-shopping-cart" />
                      </graphic>
@@ -253,7 +253,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="384.0" onAction="#saleview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Sales">
+                  <JFXButton layoutX="10.0" layoutY="384.0" onAction="#saleview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Sales">
                      <graphic>
                         <FontIcon iconLiteral="fa-money" />
                      </graphic>
@@ -270,7 +270,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="445.0" onAction="#repview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Reports">
+                  <JFXButton layoutX="10.0" layoutY="445.0" onAction="#repview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Reports">
                      <graphic>
                         <FontIcon iconLiteral="fa-pie-chart" />
                      </graphic>
@@ -288,7 +288,7 @@
                      </ripplerFill>
                   </JFXButton>
                   <Separator prefWidth="200.0" />
-                  <JFXButton layoutX="10.0" layoutY="631.0" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Settings">
+                  <JFXButton layoutX="10.0" layoutY="631.0" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" styleClass="newdash" text="Settings">
                      <graphic>
                         <FontIcon iconLiteral="fa-cog" />
                      </graphic>

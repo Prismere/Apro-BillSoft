@@ -7,12 +7,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import org.springframework.context.annotation.Primary;
+
 import com.apro.brand.Brandsearchmodel;
 import com.apro.comfun.Functions;
 import com.apro.login.SqliteConnection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
@@ -32,6 +36,7 @@ import javafx.stage.StageStyle;
 
 public class Catsearchcontroller implements Initializable{
 	Connection conn;
+	PreparedStatement p = null;
 	public Catsearchcontroller()
 	{
 	conn=SqliteConnection.Connector();
@@ -67,6 +72,71 @@ public class Catsearchcontroller implements Initializable{
 			// TODO Auto-generated catch block
 			Functions.invsave(e.getMessage());
 		}
+		
+		
+		//edit mode with double click
+
+		tblcat.setRowFactory( tv -> {
+		    TableRow<Catmodel> row = new TableRow<>();
+		    row.setOnMouseClicked(eve -> {
+		        if (eve.getClickCount() == 2 && (! row.isEmpty()) ) {
+		        	Stage stage = new Stage();
+		        	JFXDialogLayout content = new JFXDialogLayout();
+		        	content.setBody(new Text("Confirm the changes"));
+		        	StackPane stackpane = new StackPane();
+		        	JFXDialog dialog =new
+		        	JFXDialog(stackpane, content, JFXDialog.DialogTransition.CENTER); 
+		        	JFXButton button=new JFXButton("Update"); 
+		        	JFXButton button1 = new JFXButton("Cancel");
+		        	JFXTextField txted = new JFXTextField();
+		        	txted.setPromptText("Enter new value");
+		        	txted.setLabelFloat(true);
+		        	button.setOnAction(new EventHandler<ActionEvent>() {
+		        		
+						@Override
+						public void handle(ActionEvent event) {
+							Catmodel rowData = row.getItem();
+				            System.out.println(rowData.getCatname());
+				            String query = "update tbcat set catname = ? where id=" + rowData.getId() +";";	
+				            try {
+								 p = conn.prepareStatement(query);
+								p.setString(1, txted.getText().toString());
+								p.execute();
+								p.close();
+								Functions.invsave("Succesfully Updated");
+							} catch (SQLException e) {
+								Functions.invsave(e.getMessage());
+							}
+							dialog.close();
+							stage.close();
+						}
+		        		
+					});
+		        	button1.setOnAction(new EventHandler<ActionEvent>() {
+
+						@Override
+						public void handle(ActionEvent event) {
+							dialog.close();
+							stage.close();
+							
+						}
+		        		
+					});
+		        	content.setActions(txted,button,button1);
+		        	Scene scene = new Scene (stackpane);
+		        	stage.initModality(Modality.APPLICATION_MODAL);
+		        	stage.setScene(scene);
+		        	dialog.show();
+		        	stage.show();        
+		        }
+		    });
+		    return row ;
+		});
+		
+		
+		
+		
+		
 	}
 	public void prodel(ActionEvent e) throws SQLException
 	{ 	  

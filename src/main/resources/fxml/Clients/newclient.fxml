@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.client.clientController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.client.clientController">
    <children>
       <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="91.0" text="New Client">
          <font>
@@ -76,7 +76,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton fx:id="btncancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
+                  <JFXButton fx:id="btncancel" onAction="#oncan" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="119.0" style="-fx-background-color: #f44336;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
