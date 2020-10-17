@@ -14,16 +14,16 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1336.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.vendor.Vensearch">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1336.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.vendor.Vensearch">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="105.0" text="Vendor List">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="105.0" styleClass="lbl" text="Vendor List">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="8.0" layoutY="45.0" prefHeight="844.0" prefWidth="1320.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css">
+      <Pane layoutX="8.0" layoutY="45.0" prefHeight="844.0" prefWidth="1320.0" styleClass="hbox">
          <children>
-            <HBox layoutX="928.0" layoutY="766.0" prefHeight="64.0" prefWidth="381.0">
+            <HBox layoutX="470.0" layoutY="754.0" prefHeight="64.0" prefWidth="381.0">
                <children>
                   <JFXButton buttonType="RAISED" onAction="#prodel" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #b12929;" styleClass="blue" stylesheets="@../../styles/main.css" text="Delete" textFill="WHITE">
                      <font>

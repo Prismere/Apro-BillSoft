@@ -16,31 +16,23 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.vendor.Vendorcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.vendor.Vendorcontroller">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="105.0" text="New Vendor">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="105.0" styleClass="lbl" text="New Vendor">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" styleClass="hbox" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
          <children>
             <VBox layoutX="14.0" layoutY="66.0" prefHeight="437.0" prefWidth="487.0">
                <children>
-                  <JFXTextField fx:id="vname" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the vendor name">
+                  <JFXTextField fx:id="vname" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the vendor name" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="vemail" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="286.0" promptText="Enter the email">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="35.0" />
-                     </VBox.margin>
-                  </JFXTextField>
-                  <JFXTextField fx:id="vphone" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="47.0" prefHeight="27.0" prefWidth="286.0" promptText="Enter the phone">
+                  <JFXTextField fx:id="vemail" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="286.0" promptText="Enter the email" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -48,7 +40,15 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextArea fx:id="vaddress" labelFloat="true" prefHeight="233.0" prefWidth="416.0" promptText="Enter the address">
+                  <JFXTextField fx:id="vphone" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="47.0" prefHeight="27.0" prefWidth="286.0" promptText="Enter the phone" styleClass="txtfloat">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextArea fx:id="vaddress" labelFloat="true" prefHeight="233.0" prefWidth="416.0" promptText="Enter the address" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -60,20 +60,12 @@
             </VBox>
             <VBox layoutX="547.0" layoutY="66.0" prefHeight="269.0" prefWidth="270.0">
                <children>
-                  <JFXTextField fx:id="vpan" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Pan No">
+                  <JFXTextField fx:id="vpan" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Pan No" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="vtin" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="286.0" promptText="TIN">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="35.0" />
-                     </VBox.margin>
-                  </JFXTextField>
-                  <JFXTextField fx:id="vgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="47.0" prefHeight="27.0" prefWidth="286.0" promptText="GSTIN No">
+                  <JFXTextField fx:id="vtin" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="286.0" promptText="TIN" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -81,7 +73,15 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="vcode" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="84.0" prefHeight="27.0" prefWidth="286.0" promptText="Vendor Code">
+                  <JFXTextField fx:id="vgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="47.0" prefHeight="27.0" prefWidth="286.0" promptText="GSTIN No" styleClass="txtfloat">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="vcode" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="84.0" prefHeight="27.0" prefWidth="286.0" promptText="Vendor Code" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -93,7 +93,7 @@
             </VBox>
             <HBox layoutX="565.0" layoutY="543.0" prefHeight="52.0" prefWidth="270.0">
                <children>
-                  <JFXButton buttonType="RAISED" onAction="#vensave" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" styleClass="blue" stylesheets="@../../styles/main.css" text="Save" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" onAction="#vensave" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" text="Save" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -131,7 +131,7 @@
                   </JFXButton>
                </children>
             </HBox>
-            <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="543.0" onAction="#onview" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #14a8e8;" text="View All" textFill="WHITE">
+            <JFXButton fx:id="view" buttonType="RAISED" layoutX="27.0" layoutY="543.0" onAction="#onview" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #14a8e8;" text="View All" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>

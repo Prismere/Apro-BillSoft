@@ -58,6 +58,8 @@ public class PurchaseController implements Initializable{
 	@FXML
 	JFXComboBox<String> cmbpay = new JFXComboBox<String>();
 	@FXML
+	JFXButton btnadd;
+	@FXML
 	TableView<Purmodel> tblpro;
 
 	@FXML
@@ -172,8 +174,10 @@ public void selecteditem(ActionEvent ev) throws SQLException
 }
 public void onnew(ActionEvent e) throws IOException
 {
+	Scene scene = (Scene) btnadd.getScene();
 	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/newvendor.fxml"));
-	Scene scene = new Scene(root);
+	scene = new Scene(root);
+	scene.getStylesheets().add("styles/main.css");
 	Stage stage = new Stage();
 	 stage.initModality(Modality.APPLICATION_MODAL);
 	 stage.setTitle("Apro Billing Software:: Version 1.0"); 

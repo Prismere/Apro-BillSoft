@@ -15,18 +15,18 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="552.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.brand.Newbrandcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="552.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.brand.Newbrandcontroller">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="94.0" text="New Brand">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="94.0" styleClass="lbl" text="New Brand">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="24.0" layoutY="36.0" prefHeight="177.0" prefWidth="501.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="36.0">
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="177.0" prefWidth="501.0" styleClass="hbox" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="36.0">
          <children>
             <VBox layoutX="14.0" layoutY="66.0" prefHeight="52.0" prefWidth="472.0">
                <children>
-                  <JFXTextField fx:id="txtbrand" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the brand name">
+                  <JFXTextField fx:id="txtbrand" focusColor="BLACK" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the brand name" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -73,7 +73,7 @@
                   </JFXButton>
                </children>
             </HBox>
-            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="132.0" onAction="#onbrand" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #14a8e8;" text="View All" textFill="WHITE">
+            <JFXButton fx:id="view" buttonType="RAISED" layoutX="14.0" layoutY="132.0" onAction="#onbrand" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: #14a8e8;" text="View All" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>

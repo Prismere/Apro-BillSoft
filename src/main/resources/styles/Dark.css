@@ -1,4 +1,71 @@
-.anchorpane
-{
-	-fx-background-color: #000;
+.root { 
+    -fx-accent: #1e74c6;
+    -fx-focus-color: -fx-accent;
+    -fx-base: #373e43;
+    -fx-control-inner-background: derive(-fx-base, 35%);
+    -fx-control-inner-background-alt: -fx-control-inner-background ;
 }
+
+.label{
+    -fx-text-fill: lightgray;
+}
+
+.text-field {
+    -fx-prompt-text-fill: gray;
+}
+
+.titulo{
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.button{
+    -fx-focus-traversable: false;
+}
+
+.button:hover{
+    -fx-text-fill: #4ACFAC;
+}
+.button:pressed
+{
+	-fx-text-fill:#000;
+}
+.separator *.line { 
+    -fx-background-color: #121212;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+.ikonli-font-icon
+{
+	-fx-icon-color: #fff;
+}
+.vbox
+{
+	-fx-background-color: #121212;
+}
+.hbox
+{
+	-fx-background-color: #121212;
+	-fx-border-width: 5;
+	-fx-border-radius: 15;
+	-fx-background-radius: 15;
+}
+.anc
+{
+	-fx-background-color:  #323131;
+}
+.lbl
+{
+	 -fx-text-fill: #fff;
+}
+.txtfloat
+{
+	 -jfx-focus-color: #4ACFAC;
+	  -fx-prompt-text-fill: #bb86fc;
+}
+.jfx-combo-box {
+-fx-prompt-text-fill: #bb86fc;
+-jfx-focus-color:#4ACFAC;
+}
+

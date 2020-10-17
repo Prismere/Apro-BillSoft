@@ -27,6 +27,8 @@ public class Vendorcontroller {
 		conn = SqliteConnection.Connector();
 		}
 	@FXML
+	JFXButton view;
+	@FXML
 	Button btncan = new Button();
 	@FXML
 	JFXTextField vname = new JFXTextField();
@@ -88,15 +90,28 @@ public class Vendorcontroller {
 	}
 	public void onview(ActionEvent e) throws IOException
 	{
+		Scene scene1 = (Scene)view.getScene();
+		scene1.getStylesheets();
+		String s = scene1.getStylesheets().toString();
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Vendor/vendorsearch.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
 		 stage.initModality(Modality.APPLICATION_MODAL);
 		 stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		   stage.initStyle(StageStyle.UTILITY);
+		   if(s.equals("[/styles/Dark.css]"))
+			{
+		   scene.getStylesheets().add("/styles/Dark.css");
 		   stage.setScene(scene);
 		   stage.setResizable(false);
 		   stage.show();	
+			}
+		   else
+		   {
+			   stage.setScene(scene);
+			   stage.setResizable(false);
+			   stage.show();
+		   }
 	}
 	
 	

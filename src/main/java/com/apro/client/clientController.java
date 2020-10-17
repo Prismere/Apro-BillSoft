@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import com.apro.comfun.Functions;
 import com.apro.login.SqliteConnection;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
@@ -26,7 +27,8 @@ import javafx.stage.StageStyle;
 
 public class clientController {
 	
-	
+	@FXML
+	JFXButton view;
 	Connection conn;
 
 	public clientController() {
@@ -82,15 +84,32 @@ public class clientController {
 	
 	public void onview(ActionEvent ev) throws IOException
 	{
+		Scene scene1 = (Scene)view.getScene();
+		scene1.getStylesheets();
+		
+		String s = scene1.getStylesheets().toString();
+		
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/clientsearch.fxml"));
 		Scene scene = new Scene(root);
+		
 		Stage stage = new Stage();
 		 stage.initModality(Modality.APPLICATION_MODAL);
 		 stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		   stage.initStyle(StageStyle.UTILITY);
+		   if(s.equals("[/styles/Dark.css]"))
+			{
+		   scene.getStylesheets().add("/styles/Dark.css");
 		   stage.setScene(scene);
 		   stage.setResizable(false);
 		   stage.show();
+		}
+		   else
+		   {
+			   scene.getStylesheets().add("/styles/main.css");
+			   stage.setScene(scene);
+			   stage.setResizable(false);
+			   stage.show();
+		   }
 	}
 	@FXML
 	Button btncancel = new Button();

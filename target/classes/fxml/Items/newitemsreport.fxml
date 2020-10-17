@@ -15,14 +15,14 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="132.0" text="Product Search">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="132.0" styleClass="lbl" text="Product Search">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" styleClass="hbox" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
          <children>
             <VBox layoutX="254.0" layoutY="14.0" prefHeight="146.0" prefWidth="822.0">
                <children>

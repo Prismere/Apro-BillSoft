@@ -2,8 +2,12 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -15,101 +19,102 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1341.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.homescreen.NewMainController">
+<AnchorPane fx:id="anc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="913.0" prefWidth="1341.0" styleClass="anchorpane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.homescreen.NewMainController">
    <children>
-      <Pane layoutY="93.0" prefHeight="732.0" prefWidth="1056.0" style="-fx-background-color: #f5f5f5;" styleClass="newdash" stylesheets="@../styles/main.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="93.0">
+      <Pane fx:id="mpaine" layoutX="7.0" layoutY="12.0" prefHeight="687.0" prefWidth="1313.0" styleClass="hbox" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="31.0">
          <children>
-            <HBox layoutX="26.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #fff;" />
-            <HBox layoutX="309.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #fff;" />
-            <HBox layoutX="592.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #fff;" />
-            <HBox layoutX="853.0" layoutY="20.0" prefHeight="121.0" prefWidth="196.0" style="-fx-background-color: #fff;" />
-         </children>
-      </Pane>
-      <Pane layoutX="16.0" layoutY="12.0" prefHeight="687.0" prefWidth="1245.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../styles/main.css" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="31.0">
-         <children>
-            <HBox layoutX="15.0" layoutY="7.0" prefHeight="54.0" prefWidth="1270.0">
+            <Pane fx:id="firstpane" layoutX="229.0" layoutY="156.0" prefHeight="674.0" prefWidth="1056.0" styleClass="hbox">
                <children>
-                  <JFXButton fx:id="btnref" onAction="#refresh" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: #4285F4;" text="Refresh" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="1001.0" top="5.0" />
-                     </HBox.margin>
-                     <graphic>
-                        <FontIcon iconColor="WHITE" iconLiteral="fa-refresh" />
-                     </graphic>
-                     <ripplerFill>
-                        <LinearGradient endX="1.0" endY="0.6000000000000001" startX="0.10476190476190478">
-                           <stops>
-                              <Stop color="#34b3c6" />
-                              <Stop color="#6af5ff" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </ripplerFill>
-                  </JFXButton>
-                  <JFXNodesList>
-                     <children>
-                        <FontIcon iconLiteral="fa-cog" iconSize="39" translateX="139.0" />
-                        <JFXButton onAction="#ondefault" prefHeight="54.0" prefWidth="152.0" style="-fx-alignment: left;" styleClass="newdash" text="Default Theme" translateX="92.0" translateY="15.0">
-                           <graphic>
-                              <FontIcon iconLiteral="fa-pie-chart" />
-                           </graphic>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <ripplerFill>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="#967df0" />
-                                    <Stop color="#70ff99" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </ripplerFill>
-                        </JFXButton>
-                        <JFXButton layoutX="-21.0" layoutY="49.0" onAction="#ondarktheme" prefHeight="54.0" prefWidth="156.0" style="-fx-alignment: left;" styleClass="newdash" text="Dark Theme" translateX="95.0">
-                           <graphic>
-                              <FontIcon iconLiteral="fa-pie-chart" />
-                           </graphic>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <ripplerFill>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="#967df0" />
-                                    <Stop color="#70ff99" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </ripplerFill>
-                        </JFXButton>
-                     </children>
-                  </JFXNodesList>
+                  <HBox layoutX="26.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #c1c1c1;" />
+                  <HBox layoutX="309.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #c1c1c1;" />
+                  <HBox layoutX="592.0" layoutY="20.0" prefHeight="121.0" prefWidth="244.0" style="-fx-background-color: #c1c1c1;" />
+                  <HBox layoutX="853.0" layoutY="20.0" prefHeight="121.0" prefWidth="183.0" style="-fx-background-color: #c1c1c1;" />
                </children>
-            </HBox>
-            <VBox layoutX="13.0" layoutY="64.0" prefHeight="732.0" prefWidth="196.0">
+            </Pane>
+            <ImageView fitHeight="105.0" fitWidth="131.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../AfterEffects%20Temp/Media/Logo/Apro%20Logo%20fav%20dark.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnref" layoutX="1167.0" layoutY="13.0" onAction="#refresh" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: #4285F4;" text="Refresh" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-refresh" />
+               </graphic>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="0.6000000000000001" startX="0.10476190476190478">
+                     <stops>
+                        <Stop color="#34b3c6" />
+                        <Stop color="#6af5ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton alignment="CENTER" layoutX="7.0" layoutY="160.0" onAction="#oninv" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: #6f3dd8; -fx-border-radius: 15; -fx-border-width: 5; -fx-background-radius: 15;" styleClass="newdash" text="New Invoice" textFill="WHITE">
+               <graphic>
+                  <StackedFontIcon>
+                     <children>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-plus" iconSize="15" />
+                     </children>
+                  </StackedFontIcon>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+                     <stops>
+                        <Stop color="#1b59cd" />
+                        <Stop color="#1b59cd" offset="0.007662835249042145" />
+                        <Stop color="#3f5eab" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="15.07" radius="6.295" spread="0.36" width="12.11" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="exp" buttonType="RAISED" layoutX="685.0" layoutY="16.0" onAction="#onexport" style="-fx-background-color: #002366;" text="Export" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <StackedFontIcon>
+                     <children>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-download" />
+                     </children>
+                  </StackedFontIcon>
+               </graphic>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#ea3131" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <VBox layoutX="13.0" layoutY="224.0" prefHeight="622.0" prefWidth="192.0" styleClass="vbox">
                <children>
-                  <JFXButton alignment="CENTER" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: #6f3dd8;" styleClass="newdash" text="New Invoice" textFill="WHITE">
-                     <graphic>
-                        <StackedFontIcon>
-                           <children>
-                              <FontIcon iconColor="WHITE" iconLiteral="fa-plus" iconSize="15" />
-                           </children>
-                        </StackedFontIcon>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <ripplerFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                           <stops>
-                              <Stop color="#1b59cd" />
-                              <Stop color="#1b59cd" offset="0.007662835249042145" />
-                              <Stop color="#3f5eab" offset="1.0" />
-                           </stops>
-                        </RadialGradient>
-                     </ripplerFill>
-                  </JFXButton>
                   <JFXNodesList fx:id="invnode">
                      <children>
-                        <JFXButton prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right;" text="Inventory">
+                        <JFXButton prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Inventory">
+                           <graphic>
+                              <FontIcon iconLiteral="fa-plus" selectionFill="#976868" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <ripplerFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#ff8800" />
+                                    <Stop color="#ff8800" offset="0.7011494252873562" />
+                                    <Stop color="ORANGE" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXButton layoutX="10.0" layoutY="10.0" onAction="#newitem" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left; -fx-background-color: #4285F4;" text="Add Inventory" translateX="203.0" translateY="-25.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-plus" />
                            </graphic>
@@ -126,24 +131,7 @@
                               </RadialGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXButton layoutX="10.0" layoutY="10.0" onAction="#newitem" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Add Inventory" translateX="203.0" translateY="-25.0">
-                           <graphic>
-                              <FontIcon iconLiteral="fa-plus" />
-                           </graphic>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <ripplerFill>
-                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                 <stops>
-                                    <Stop color="#ff8800" />
-                                    <Stop color="#ff8800" offset="0.7011494252873562" />
-                                    <Stop color="ORANGE" offset="1.0" />
-                                 </stops>
-                              </RadialGradient>
-                           </ripplerFill>
-                        </JFXButton>
-                        <JFXButton layoutX="10.0" layoutY="71.0" onAction="#onsearch" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: right; -fx-background-color: #f2f2f2;" styleClass="newdash" text="Search Inventory" translateX="203.0" translateY="-15.0">
+                        <JFXButton layoutX="10.0" layoutY="71.0" onAction="#onsearch" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left; -fx-background-color: #4285F4;" text="Search Inventory" translateX="203.0" translateY="-15.0">
                            <graphic>
                               <FontIcon iconLiteral="fa-plus" />
                            </graphic>
@@ -165,7 +153,7 @@
                         <Insets top="13.0" />
                      </VBox.margin>
                   </JFXNodesList>
-                  <JFXButton layoutX="10.0" layoutY="79.0" onAction="#clientview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Clients">
+                  <JFXButton layoutX="10.0" layoutY="79.0" onAction="#clientview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Clients">
                      <graphic>
                         <FontIcon iconLiteral="fa-user" />
                      </graphic>
@@ -185,7 +173,7 @@
                         <Insets />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="140.0" onAction="#vendorview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Vendors">
+                  <JFXButton layoutX="10.0" layoutY="140.0" onAction="#vendorview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Vendors">
                      <graphic>
                         <FontIcon iconLiteral="fa-user-md" />
                      </graphic>
@@ -202,7 +190,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="201.0" onAction="#brandview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Brand">
+                  <JFXButton layoutX="10.0" layoutY="201.0" onAction="#brandview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Brand">
                      <graphic>
                         <FontIcon iconLiteral="fa-plus" />
                      </graphic>
@@ -219,7 +207,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="262.0" onAction="#catview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Category">
+                  <JFXButton layoutX="10.0" layoutY="262.0" onAction="#catview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Category">
                      <graphic>
                         <FontIcon iconLiteral="fa-plus" />
                      </graphic>
@@ -236,7 +224,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="323.0" onAction="#purview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Purchase">
+                  <JFXButton layoutX="10.0" layoutY="323.0" onAction="#purview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Purchase">
                      <graphic>
                         <FontIcon iconLiteral="fa-shopping-cart" />
                      </graphic>
@@ -253,7 +241,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="384.0" onAction="#saleview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Sales">
+                  <JFXButton layoutX="10.0" layoutY="384.0" onAction="#saleview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Sales">
                      <graphic>
                         <FontIcon iconLiteral="fa-money" />
                      </graphic>
@@ -270,7 +258,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="445.0" onAction="#repview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Reports">
+                  <JFXButton layoutX="10.0" layoutY="445.0" onAction="#repview" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Reports">
                      <graphic>
                         <FontIcon iconLiteral="fa-pie-chart" />
                      </graphic>
@@ -288,7 +276,7 @@
                      </ripplerFill>
                   </JFXButton>
                   <Separator prefWidth="200.0" />
-                  <JFXButton layoutX="10.0" layoutY="631.0" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: left;" styleClass="newdash" text="Settings">
+                  <JFXButton layoutX="10.0" layoutY="631.0" prefHeight="61.0" prefWidth="192.0" style="-fx-alignment: center-left;" text="Settings">
                      <graphic>
                         <FontIcon iconLiteral="fa-cog" />
                      </graphic>
@@ -308,8 +296,30 @@
                         <Insets top="25.0" />
                      </VBox.margin>
                   </JFXButton>
+                  <JFXToggleButton fx:id="tg" text="Night Mode" toggleColor="#07268d" toggleLineColor="#228bcd" />
                </children>
             </VBox>
+            <JFXButton fx:id="imp" buttonType="RAISED" layoutX="556.0" layoutY="16.0" onAction="#onimport" style="-fx-background-color: #a92869;" text="Import" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <StackedFontIcon>
+                     <children>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-upload" />
+                     </children>
+                  </StackedFontIcon>
+               </graphic>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+                     <stops>
+                        <Stop color="#db3777" />
+                        <Stop color="#db3777" offset="0.007662835249042145" />
+                        <Stop color="#a32df2" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
          </children>
       </Pane>
    </children>

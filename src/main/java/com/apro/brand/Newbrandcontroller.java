@@ -24,7 +24,7 @@ public class Newbrandcontroller {
 
 	Connection conn;
 	@FXML
-	JFXButton btncan = new JFXButton();
+	JFXButton btncan,view;
 	public Newbrandcontroller(){
 	conn=SqliteConnection.Connector();
 	}
@@ -35,7 +35,7 @@ public class Newbrandcontroller {
 		String query = "insert into brand (brandname) values (?);";
 		PreparedStatement bst = conn.prepareStatement(query);
 		try {
-			bst.setString(1, txtbrand.getText());
+			bst.setString(1, txtbrand.getText().toUpperCase());
 			bst.executeUpdate();
 			Functions.invsave(txtbrand.getText() + " inserted succesfully");
 			
@@ -56,6 +56,9 @@ public class Newbrandcontroller {
 	}
 	public void onbrand(ActionEvent e) throws IOException
 	{
+		Scene scene1 = (Scene)view.getScene();
+		scene1.getStylesheets();
+		String s = scene1.getStylesheets().toString();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/brandsearch.fxml"));
 		Scene scene = new Scene(root);
@@ -63,8 +66,19 @@ public class Newbrandcontroller {
 		 stage.initModality(Modality.APPLICATION_MODAL);
 		 stage.setTitle("Apro Billing Software:: Version 1.0"); 
 		   stage.initStyle(StageStyle.UTILITY);
+		   
+		   if(s.equals("[/styles/Dark.css]"))
+			{
+		   scene.getStylesheets().add("/styles/Dark.css");
 		   stage.setScene(scene);
 		   stage.setResizable(false);
 		   stage.show();
+			}
+		   else
+		   {
+			   stage.setScene(scene);
+			   stage.setResizable(false);
+			   stage.show();
+		   }
 	}
 }

@@ -16,23 +16,23 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.items.Newitemcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.items.Newitemcontroller">
    <children>
       <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="106.0" text="New Item">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" styleClass="hbox" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
          <children>
             <VBox layoutX="14.0" layoutY="25.0" prefHeight="563.0" prefWidth="472.0">
                <children>
-                  <JFXTextField fx:id="pname" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the product name">
+                  <JFXTextField fx:id="pname" focusColor="#601297" labelFloat="true" prefHeight="27.0" prefWidth="286.0" promptText="Enter the product name" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextArea fx:id="pdes" labelFloat="true" prefHeight="181.0" prefWidth="472.0" promptText="Enter the product desciption">
+                  <JFXTextArea fx:id="pdes" labelFloat="true" prefHeight="181.0" prefWidth="472.0" promptText="Enter the product desciption" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                      <children>
-                        <JFXComboBox fx:id="cmbbrand" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="212.0" promptText="Brand" visibleRowCount="15" />
+                        <JFXComboBox fx:id="cmbbrand" focusColor="#4d4d4d" labelFloat="true" prefHeight="25.0" prefWidth="212.0" promptText="Brand" visibleRowCount="15" />
                         <JFXComboBox fx:id="cmbcat" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="238.0" promptText="Category" visibleRowCount="15">
                            <HBox.margin>
                               <Insets left="21.0" />
@@ -55,7 +55,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="263.0" prefHeight="111.0" prefWidth="472.0">
                      <children>
-                        <JFXTextField fx:id="pprice" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Purchase Price">
+                        <JFXTextField fx:id="pprice" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Purchase Price" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets top="35.0" />
                            </HBox.margin>
@@ -63,7 +63,7 @@
                               <Font size="16.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="psale" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="Sale Price">
+                        <JFXTextField fx:id="psale" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="Sale Price" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets left="21.0" top="35.0" />
                            </HBox.margin>
@@ -78,7 +78,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="323.0" prefHeight="66.0" prefWidth="472.0">
                      <children>
-                        <JFXTextField fx:id="pmin" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Min. Retail Price">
+                        <JFXTextField fx:id="pmin" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="218.0" promptText="Min. Retail Price" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -86,7 +86,7 @@
                               <Font size="16.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="pmrp" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="MRP">
+                        <JFXTextField fx:id="pmrp" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="243.0" promptText="MRP" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets left="21.0" />
                            </HBox.margin>
@@ -103,7 +103,7 @@
             </VBox>
             <VBox layoutX="565.0" layoutY="23.0" prefHeight="437.0" prefWidth="206.0">
                <children>
-                  <JFXTextField fx:id="psku" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="206.0" promptText="SKU">
+                  <JFXTextField fx:id="psku" focusColor="#601297" labelFloat="true" prefHeight="25.0" prefWidth="206.0" promptText="SKU" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -111,7 +111,7 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="phsn" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="206.0" promptText="HSN">
+                  <JFXTextField fx:id="phsn" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="206.0" promptText="HSN" styleClass="txtfloat">
                      <VBox.margin>
                         <Insets top="35.0" />
                      </VBox.margin>
@@ -119,7 +119,7 @@
                         <Font size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="pcgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="82.0" prefHeight="25.0" prefWidth="206.0" promptText="CGST">
+                  <JFXTextField fx:id="pcgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="82.0" prefHeight="25.0" prefWidth="206.0" promptText="CGST" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -127,7 +127,7 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="pigst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="119.0" prefHeight="25.0" prefWidth="206.0" promptText="IGST">
+                  <JFXTextField fx:id="pigst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="119.0" prefHeight="25.0" prefWidth="206.0" promptText="IGST" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -135,7 +135,7 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="psgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="261.0" prefHeight="25.0" prefWidth="206.0" promptText="SGST">
+                  <JFXTextField fx:id="psgst" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="261.0" prefHeight="25.0" prefWidth="206.0" promptText="SGST" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -143,7 +143,7 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="pcess" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="298.0" prefHeight="25.0" prefWidth="206.0" promptText="CESS">
+                  <JFXTextField fx:id="pcess" focusColor="#601297" labelFloat="true" layoutX="10.0" layoutY="298.0" prefHeight="25.0" prefWidth="206.0" promptText="CESS" styleClass="txtfloat">
                      <font>
                         <Font size="16.0" />
                      </font>

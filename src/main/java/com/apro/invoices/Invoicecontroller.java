@@ -15,12 +15,14 @@ import java.util.ResourceBundle;
 import org.controlsfx.control.textfield.TextFields;
 
 import com.apro.comfun.Functions;
-import com.apro.homescreen.Maincontroller;
+import com.apro.homescreen.NewMainController;
 import com.apro.login.SqliteConnection;
 import com.apro.purchase.Purmodel;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.IntegerBinding;
@@ -40,6 +42,7 @@ import javafx.stage.StageStyle;
 
 public class Invoicecontroller implements Initializable {
 	Connection conn;
+	Boolean b;
 	 public Invoicecontroller() {
 		 
 		 conn = SqliteConnection.Connector(); 
@@ -50,7 +53,8 @@ public class Invoicecontroller implements Initializable {
 	
 	 @FXML
 		JFXTextField qty = new JFXTextField();
-	
+	@FXML
+	JFXButton btnadd = new JFXButton();
 @FXML
 Button btncancel = new Button();
 @FXML
@@ -118,7 +122,7 @@ private List<String> getProduct(){
 		
 	}
 	catch(SQLException ex) {
-		Functions.invsave(ex.getMessage());
+		/* Functions.invsave(ex.getMessage()); */
 		return null;
 	}
 
@@ -134,27 +138,44 @@ public void oncan(ActionEvent event)
 
 public void onnew(ActionEvent ex)
 {
+	
+	Scene scene= (Scene) btnadd.getScene();
+	String s = scene.getStylesheets().toString();
 	try
 	{
 	Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clients/newclient.fxml"));
-	Scene scene = new Scene(root);
+	scene = new Scene(root);
+	
 	Stage stage = new Stage();
 	stage.setTitle("Inventory:: Version 1.0"); 
-	
-	/* make only foreground window active*/
 	stage.initModality(Modality.APPLICATION_MODAL);
-	
 	stage.initStyle(StageStyle.UTILITY);
+	
+	 if(s.equals("[/styles/Dark.css]"))
+		{
+	   scene.getStylesheets().add("/styles/Dark.css");
+	
 	stage.setScene(scene);
-	/* stage.setMaximized(true); */
+	stage.setResizable(false);
 	stage.show();
-} catch (Exception exx) {
-	exx.printStackTrace();
+		}
+	 else
+	 {
+		 scene.getStylesheets().add("/styles/main.css");
+			
+			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.show();
+	 }
+	}
+	catch (Exception exx) {
+		Functions.invsave(exx.getMessage());
 }
 }
 
 public void saveinvoice(ActionEvent e)
 {
+	
 	try
 	{
 	
@@ -174,7 +195,7 @@ public void saveinvoice(ActionEvent e)
 	/* stage.setMaximized(true); */
 	stage.show();
 } catch (Exception e2) {
-	e2.printStackTrace();
+	Functions.invsave(e2.getMessage());
 }
 }
 
@@ -206,14 +227,7 @@ public void initialize(URL location, ResourceBundle resources) {
 	catch(SQLException ex)
 	{
 		Functions.invsave(ex.getMessage());
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
 public void selecteditem(ActionEvent ex) throws SQLException
 {
@@ -233,7 +247,7 @@ public void selecteditem(ActionEvent ex) throws SQLException
 	
 	catch (SQLException e) {
 		// TODO Auto-generated catch block
-		Functions.invsave(e.getMessage());
+		e.getMessage();
 	}
 	finally
 	{
@@ -244,12 +258,17 @@ public void selecteditem(ActionEvent ex) throws SQLException
 int c = 0;
 public void onadd(ActionEvent e)
 {	
-	 c++;
+	c++;
 	obist.add(new Purmodel("1"));
 	name.setCellValueFactory(new PropertyValueFactory<>("name"));
 	tblpro.setItems(obist);
-	
 	txttot.setText(String.valueOf(c));
+}
+
+
+public void ad(boolean selected) {
+
+	
 }
 
 }

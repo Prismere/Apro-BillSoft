@@ -1,5 +1,6 @@
 package com.apro.category;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +23,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -51,8 +54,9 @@ public class Catsearchcontroller implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		 ResultSet rs = null;
+		
 		try {
-			 rs = conn.createStatement().executeQuery("select * from tbcat");
+			 rs = conn.createStatement().executeQuery("select * from tbcat order by catname");
 			while (rs.next())
 			{
 				obist.add(new Catmodel(rs.getString("id"), rs.getString("catname")));
@@ -95,22 +99,58 @@ public class Catsearchcontroller implements Initializable{
 		        		
 						@Override
 						public void handle(ActionEvent event) {
+							
 							Catmodel rowData = row.getItem();
 				            System.out.println(rowData.getCatname());
 				            String query = "update tbcat set catname = ? where id=" + rowData.getId() +";";	
 				            try {
-								 p = conn.prepareStatement(query);
-								p.setString(1, txted.getText().toString());
+								p = conn.prepareStatement(query);
+								p.setString(1, txted.getText().toString().toUpperCase());
 								p.execute();
 								p.close();
-								Functions.invsave("Succesfully Updated");
+								
+								try {
+									onrefresh(event);
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
 							} catch (SQLException e) {
 								Functions.invsave(e.getMessage());
 							}
 							dialog.close();
 							stage.close();
+							
 						}
 		        		
+					});
+		        	txted.setOnAction(new EventHandler<ActionEvent>() {
+
+						@Override
+						public void handle(ActionEvent event) {
+							Catmodel rowData = row.getItem();
+				            System.out.println(rowData.getCatname());
+				            String query = "update tbcat set catname = ? where id=" + rowData.getId() +";";	
+				            try {
+								p = conn.prepareStatement(query);
+								p.setString(1, txted.getText().toString().toUpperCase());
+								p.execute();
+								p.close();
+								
+								try {
+									onrefresh(event);
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							} catch (SQLException e) {
+								Functions.invsave(e.getMessage());
+							}
+							dialog.close();
+							stage.close();
+						
+							
+						}
 					});
 		        	button1.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -127,15 +167,44 @@ public class Catsearchcontroller implements Initializable{
 		        	stage.initModality(Modality.APPLICATION_MODAL);
 		        	stage.setScene(scene);
 		        	dialog.show();
-		        	stage.show();        
+		        	stage.show();     
+		        	
 		        }
 		    });
-		    return row ;
+		    return row ; 
 		});
+	}
+	@FXML
+	JFXButton ref;
+	public void onrefresh(ActionEvent eve) throws IOException
+	{
+		Stage stage1 = (Stage) ref.getScene().getWindow();
+		stage1.close();
+		Scene scene1 = (Scene) ref.getScene();
+		String s = scene1.getStylesheets().toString();
 		
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Items/catsearch.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+		stage.setTitle("Apro Billing Software:: Version 1.0"); 
+		if(s.equals("[/styles/Dark.css]"))
+		{
+			scene.getStylesheets().add("/styles/Dark.css");
+			
+			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.show();	
+		}
+		else
+		{
+			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.show();
+		}
 		
-		
-		
+	}
+	public void onsearch(ActionEvent e)
+	{
 		
 	}
 	public void prodel(ActionEvent e) throws SQLException

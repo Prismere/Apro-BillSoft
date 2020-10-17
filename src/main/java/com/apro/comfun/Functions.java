@@ -17,8 +17,8 @@ public class Functions {
 	public static void invsave(String msg) {
 	Stage primaryStage = new Stage();
 	 JFXDialogLayout content= new JFXDialogLayout();
-	    content.setHeading(new Text(msg));
-	    content.setBody(new Text("Operation Successful"));
+	    
+	    content.setBody(new Text(msg));
 	    StackPane stackpane = new StackPane();
 	    JFXDialog dialog =new JFXDialog(stackpane, content, JFXDialog.DialogTransition.CENTER);
 	    JFXButton button=new JFXButton("Okay");
@@ -39,4 +39,7 @@ public class Functions {
 	    primaryStage.setResizable(false);
 	    primaryStage.show();
 	}
+	
+	
+	
 }

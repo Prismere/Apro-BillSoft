@@ -19,14 +19,14 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="953.0" prefWidth="996.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.purchase.PurchaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="953.0" prefWidth="996.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.purchase.PurchaseController">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="158.0" text="New Purchase Order">
+      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="158.0" styleClass="lbl" text="New Purchase Order">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
+      <Pane layoutX="24.0" layoutY="36.0" prefHeight="350.0" prefWidth="563.0" styleClass="hbox" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="36.0">
          <children>
             <HBox layoutX="819.0" layoutY="14.0">
                <children>
@@ -87,7 +87,7 @@
                   <HBox prefHeight="117.0" prefWidth="936.0">
                      <children>
                         <JFXComboBox fx:id="cmbvendor" labelFloat="true" prefHeight="37.0" prefWidth="113.0" promptText="Vendor" />
-                        <JFXButton buttonType="RAISED" onAction="#onnew" prefHeight="42.0" prefWidth="103.0" style="-fx-background-color: #008CBA;" text="Add New" textFill="WHITE">
+                        <JFXButton fx:id="btnadd" buttonType="RAISED" onAction="#onnew" prefHeight="42.0" prefWidth="103.0" style="-fx-background-color: #008CBA;" text="Add New" textFill="WHITE">
                            <graphic>
                               <FontIcon iconColor="WHITE" iconLiteral="fa-plus" />
                            </graphic>
@@ -103,7 +103,7 @@
                               </RadialGradient>
                            </ripplerFill>
                         </JFXButton>
-                        <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Purchase ID">
+                        <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Purchase ID" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets left="32.0" />
                            </HBox.margin>
@@ -116,7 +116,7 @@
                               <Insets left="39.0" />
                            </HBox.margin>
                         </JFXComboBox>
-                        <JFXTextArea fx:id="itemdesc" labelFloat="true" prefHeight="181.0" prefWidth="302.0" promptText="Product Description">
+                        <JFXTextArea fx:id="itemdesc" editable="false" labelFloat="true" prefHeight="181.0" prefWidth="302.0" promptText="Product Description">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -130,7 +130,7 @@
                      <children>
                         <HBox prefHeight="54.0" prefWidth="1308.0">
                            <children>
-                              <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Enter the Order ID">
+                              <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Enter the Order ID" styleClass="txtfloat">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -143,7 +143,7 @@
                                     <Insets left="39.0" />
                                  </HBox.margin>
                               </JFXComboBox>
-                              <JFXTextField fx:id="qty" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="133.0" promptText="Enter the Quanity">
+                              <JFXTextField fx:id="qty" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="133.0" promptText="Enter the Quanity" styleClass="txtfloat">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -151,7 +151,7 @@
                                     <Insets left="39.0" />
                                  </HBox.margin>
                               </JFXTextField>
-                              <JFXTextField labelFloat="true" layoutX="460.0" layoutY="10.0" prefHeight="37.0" prefWidth="108.0" promptText="Unit Price">
+                              <JFXTextField labelFloat="true" layoutX="460.0" layoutY="10.0" prefHeight="37.0" prefWidth="108.0" promptText="Unit Price" styleClass="txtfloat">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -159,7 +159,7 @@
                                     <Insets left="39.0" />
                                  </HBox.margin>
                               </JFXTextField>
-                              <JFXTextField labelFloat="true" layoutX="652.0" layoutY="10.0" prefHeight="37.0" prefWidth="97.0" promptText="Discount (%)">
+                              <JFXTextField labelFloat="true" layoutX="652.0" layoutY="10.0" prefHeight="37.0" prefWidth="97.0" promptText="Discount (%)" styleClass="txtfloat">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -167,7 +167,7 @@
                                     <Insets left="39.0" />
                                  </HBox.margin>
                               </JFXTextField>
-                              <JFXTextField labelFloat="true" layoutX="844.0" layoutY="10.0" prefHeight="37.0" prefWidth="71.0" promptText="Tax (%)">
+                              <JFXTextField labelFloat="true" layoutX="844.0" layoutY="10.0" prefHeight="37.0" prefWidth="71.0" promptText="Tax (%)" styleClass="txtfloat">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -228,7 +228,7 @@
                               <Font size="13.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXTextField labelFloat="true" promptText="New Discount">
+                        <JFXTextField labelFloat="true" promptText="New Discount" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets left="147.0" />
                            </HBox.margin>
@@ -251,7 +251,7 @@
                               <Font size="13.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXTextField labelFloat="true" promptText="New Discount">
+                        <JFXTextField labelFloat="true" promptText="New Discount" styleClass="txtfloat">
                            <HBox.margin>
                               <Insets left="39.0" />
                            </HBox.margin>
@@ -282,7 +282,7 @@
                               <Insets left="35.0" />
                            </HBox.margin>
                         </JFXComboBox>
-                        <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Amount">
+                        <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="134.0" promptText="Amount" styleClass="txtfloat">
                            <font>
                               <Font size="13.0" />
                            </font>

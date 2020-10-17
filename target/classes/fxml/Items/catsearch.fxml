@@ -13,19 +13,20 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="457.0" style="-fx-background-color: #e5e6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.category.Catsearchcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="457.0" styleClass="anc" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.category.Catsearchcontroller">
    <children>
-      <Label layoutX="29.0" layoutY="6.0" prefHeight="27.0" prefWidth="143.0" text="Category Search">
+      <Label layoutX="26.0" layoutY="34.0" prefHeight="27.0" prefWidth="143.0" styleClass="lbl" text="Category Search">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Pane layoutX="8.0" layoutY="48.0" prefHeight="508.0" prefWidth="444.0" style="-fx-background-color: #fff;" styleClass="newdash" stylesheets="@../../styles/main.css">
+      <Pane layoutX="7.0" layoutY="79.0" prefHeight="508.0" prefWidth="444.0" styleClass="hbox">
          <children>
             <HBox layoutX="30.0" layoutY="439.0" prefHeight="83.0" prefWidth="381.0">
                <children>
-                  <JFXButton buttonType="RAISED" onAction="#prodel" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #b12929;" styleClass="blue" stylesheets="@../../styles/main.css" text="Delete" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" onAction="#prodel" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #b12929;" text="Delete" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -41,7 +42,7 @@
                         </RadialGradient>
                      </ripplerFill>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" styleClass="blue" stylesheets="@../../styles/main.css" text="Search" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#onsearch" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #4CAF50;" text="Search" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -96,5 +97,25 @@
             <DropShadow blurType="GAUSSIAN" height="18.03" radius="8.515" width="18.03" />
          </effect>
       </Pane>
+      <JFXButton fx:id="ref" layoutX="334.0" layoutY="33.0" onAction="#onrefresh" style="-fx-background-color: #0198E1;" text="Refresh" textFill="WHITE">
+         <graphic>
+            <StackedFontIcon>
+               <children>
+                  <FontIcon fill="WHITE" iconLiteral="fa-refresh" />
+               </children>
+            </StackedFontIcon>
+         </graphic>
+         <font>
+            <Font size="13.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#61ecfb" />
+                  <Stop color="#6198fa" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
    </children>
 </AnchorPane>

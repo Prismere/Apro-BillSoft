@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="logbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apro.login.Nlogincontroller">
+   <children>
+      <VBox prefHeight="517.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="494.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="517.0" prefWidth="400.0" style="-fx-background-color: #fff;">
+         <children>
+            <AnchorPane prefHeight="495.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="134.0" layoutY="138.0" text="connect to" textFill="#3999e8">
+                     <font>
+                        <Font name="Berlin Sans FB" size="31.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtname" labelFloat="true" layoutX="59.0" layoutY="198.0" onAction="#onenter" prefHeight="25.0" prefWidth="283.0" promptText="Enter user name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="pfield" labelFloat="true" layoutX="59.0" layoutY="267.0" onAction="#onenter" prefHeight="25.0" prefWidth="283.0" promptText="Enter password">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXTextField fx:id="ptext" labelFloat="true" layoutX="59.0" layoutY="267.0" onAction="#onenter" prefHeight="25.0" prefWidth="283.0" promptText="Enter password">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXToggleButton fx:id="tg" layoutX="264.0" layoutY="257.0" onAction="#ontoggle" prefHeight="34.0" prefWidth="125.0" text=" " toggleColor="#3999e8" toggleLineColor="#71adda" />
+                  <JFXButton fx:id="btnlog" buttonType="RAISED" layoutX="59.0" layoutY="339.0" onAction="#onlog" prefHeight="34.0" prefWidth="91.0" styleClass="btnlog" stylesheets="@../styles/main.css" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#3999e8" />
+                              <Stop color="#74e3af" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Label fx:id="lblerror" layoutX="83.0" layoutY="314.0" prefHeight="19.0" prefWidth="235.0" text="Incorrect id or password. Try again ^_^" textFill="#f20f0f">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="281.0" layoutY="458.0" prefHeight="17.0" prefWidth="110.0" text="aproitsolutions.com" textFill="#b2b2b2" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</HBox>
